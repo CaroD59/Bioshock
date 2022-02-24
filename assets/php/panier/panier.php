@@ -34,7 +34,7 @@ require('assets/bdd/bddconfig.php');
 	         }
 	     }   
 	     // Empêcher la resoumission des formulaires...   
-	     header('location: index.php?page=panier');   
+	     header('location: index.php?page=panier/panier');   
 	     exit;
 	 }
 	
@@ -61,13 +61,13 @@ require('assets/bdd/bddconfig.php');
 			}   
 		}
 		// Empêcher la re-soumission de formulaires...   
-		header('location: index.php?page=panier');   
+		header('location: index.php?page=panier/panier');   
 		exit;
 	}
 
 	/* Diriger l'utilisateur vers la page de commande s'il clique sur le bouton Passer la commande, le panier ne doit pas être vide.*/   
 	if (isset($_POST['placercommande']) && isset($_SESSION['panier']) && !empty($_SESSION['panier'])) {   
-		header('Location: index.php?page=placercommande');   
+		header('Location: index.php?page=panier/placercommande');   
 		exit;
 	}
 
@@ -101,7 +101,7 @@ require('assets/bdd/bddconfig.php');
 
 	   <div class="panier content-wrapper">   
 	       <h1>Panier d'achat</h1>   
-	       <form action="index.php?page=panier" method="post">   
+	       <form action="index.php?page=panier/panier" method="post">   
 	           <table>  
 	              <thead>   
 	                  <tr>   
@@ -120,13 +120,13 @@ require('assets/bdd/bddconfig.php');
 	                  <?php foreach ($produits as $produit): ?>   
 	                  <tr>   
 	                      <td class="img">   
-	                          <a href="index.php?page=produit&id=<?=$produit['id']?>">   
+	                          <a href="index.php?page=panier/produit&id=<?=$produit['id']?>">   
 	                              <img src="assets/img/Items/<?=$produit['img']?>" width="50" height="50" alt="<?=$produit['nom']?>">   
 	                          </a>
 	                      </td>   
-	       <td><a href="index.php?page=produit&id=<?=$produit['id']?>"><?=$produit['nom']?></a>   
+	       <td><a href="index.php?page=panier/produit&id=<?=$produit['id']?>"><?=$produit['nom']?></a>   
 	                          <br>   
-	                          <a href="index.php?page=panier&remove=<?=$produit['id']?>" class="remove"><i class="fas fa-trash">&nbsp;</i>Supprimer </a></td>   
+	                          <a href="index.php?page=panier/panier&remove=<?=$produit['id']?>" class="remove"><i class="fas fa-trash">&nbsp;</i>Supprimer </a></td>   
 	                      <td class="prix">&euro;<?=$produit['prix']?></td>   
 	                      <td class="quantité"><input type="number" name="quantité-<?=$produit['id']?>" value="<?=$produits_in_panier[$produit['id']]?>" min="1" max="<?=$produit['quantité']?>" placeholder="quantité" required></td>   
 	    <td class="prix">&euro;<?=$produit['prix']*$produits_in_panier[$produit['id']]?></td>   

@@ -34,7 +34,7 @@ require('assets/bdd/bddconfig.php');
 	             <span class="prix_Réel"> &euro;<?=$produit['prix_Réel']?></span>
 	             <?php endif; ?>
 	         </span>
-	         <form action="index.php?page=panier" method="post">
+	         <form action="index.php?page=panier/panier" method="post">
 	             <input type="number" name="quantité" value="1" min="1" max="<?=$produit['quantité']?>" placeholder="Quantité" required>
 	             <input type="hidden" name="produit_id" value="<?=$produit['id']?>">            <input type="submit" value="Ajouter au panier">
 	         </form>

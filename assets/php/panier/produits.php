@@ -29,7 +29,7 @@
 	    <p><?=$total_produits?> produits</p>
 	    <div class="produits-wrapper"><table><tr>
 	        <?php foreach ($produits as $produit): ?>
-	        <td><a href="index.php?page=produit&id=<?=$produit['id']?>" class="produit"> <img src="assets/img/Items/<?=$produit['img']?>" width="200" height="200" alt="<?=$produit['nom']?>"><br>
+	        <td><a href="index.php?page=panier/produit&id=<?=$produit['id']?>" class="produit"> <img src="assets/img/Items/<?=$produit['img']?>" width="200" height="200" alt="<?=$produit['nom']?>"><br>
 	            <span class="nom"><?=$produit['nom']?></span><br>
 	            <span class="price">
 	                &euro;<?=$produit['prix']?>
@@ -43,10 +43,10 @@
 	    </div>
 	    <div class="buttons">
 	        <?php if ($current_page > 1): ?>
-	        <a href="index.php?page=produits&p=<?=$current_page-1?>"><i class="fas fa-angle-double-left"> </i> Prev</a>
+	        <a href="index.php?page=panier/produits&p=<?=$current_page-1?>"><i class="fas fa-angle-double-left"> </i> Prev</a>
 	        <?php endif; ?>
 	        <?php if ($total_produits > ($current_page * $nbr_produits_sur_chaque_page) - $nbr_produits_sur_chaque_page + count($produits)): ?>
-	        <a href="index.php?page=produits&p=<?=$current_page+1?>">Next <i class="fas fa-angle-double-right"> </i></a>
+	        <a href="index.php?page=panier/produits&p=<?=$current_page+1?>">Next <i class="fas fa-angle-double-right"> </i></a>
 	        <?php endif; ?>
 	    </div>
 	</div>

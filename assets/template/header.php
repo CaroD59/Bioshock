@@ -15,7 +15,7 @@
       <p>Journal</p>
     </div>
     <div>
-    <a href="index.php?page=produits" class="linky">Boutique</a>
+    <a href="index.php?page=panier/produits" class="linky">Boutique</a>
     </div>
     <div>
       <p>Contact</p>
