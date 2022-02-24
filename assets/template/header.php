@@ -1,35 +1,42 @@
 <head>
    <link rel="stylesheet" href="assets/css/header.css">
 </head>
-
 <body>
-  <header>
-    <div>
-      <p>Accueil</p>
+  <header class="header">
+    <div class ="button-burger" id ="button-burger">
+      <button class="burger" id="button-burger"><img src="assets/img/Site/burger.png" alt="" class="burger" id="burger"></button>
     </div>
-    <div>
-      <p>Salle des portraits</p>
+    <div class="bloc-logo">
+      <img src="assets/img/Site/logo1.png" alt="" class="logo">
     </div>
-    <div>
-      <p>Journal</p>
+    <div class="bloc-liens" id="bloc-liens">
+    <div class="lien">
+    <a href="index.php?page=home" class="linky">H<span class="flicker-slow">o</span>me</a>
     </div>
-    <div>
-      <p>Boutique</p>
+    <div  class="lien">
+      <a href="#">Journal</a>
     </div>
-    <div>
-      <p>Contact</p>
+    <div  class="lien">
+    <a href="index.php?page=produits" class="linky">Bo<span class="flicker-fast">u</span>tique</a>
     </div>
-    <div>
-      <p>Profil</p>
+    <div  class="lien">
+      <a href="#">Contact</a>
     </div>
-    <div>
-      <p>Connexion</p>
+    <div  class="lien">
+    <a href="index.php?page=profil_update" class="linky">Modifier mon profil</a>
     </div>
-    <div>
-      <p>Inscription</p>
+    <div  class="lien">
+    <a href="index.php?page=connexion" class="linky">Con<span class="flicker-fast">n<span>exion</a> 
     </div>
-    <div>
-      <p>Déconnexion</p>
+    <div  class="lien">
+    <a href="index.php?page=inscription" class="linky">Inscription</a>
     </div>
+    <div  class="lien">
+    <a href="index.php?page=deconnexion" class="linky"><span class="flicker-slow">Deconnexion</span></a>
+    </div>
+    </div>  
   </header>
+
 </body>
+
+<script src="assets/js/burger.js"></script>

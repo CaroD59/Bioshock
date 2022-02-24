@@ -1,0 +1,115 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #091306;
+  padding: 20px;
+  border-bottom: 3px solid #8c783e;
+}
+
+.bloc-logo {
+  width: auto;
+  margin: auto;
+}
+
+.logo {
+  width: 150px;
+}
+
+.bloc-liens {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.lien {
+  letter-spacing: 0.2em;
+  margin: auto;
+}
+
+a {
+  padding: 20px;
+  font-family: 'Andes';
+  color: rgb(202, 197, 197);
+  text-decoration: none;
+  vertical-align: middle;
+  display: table-cell;
+  font-size: 2em;
+  text-shadow: 0px 0px 5px #8c783e, 0px 0px 10px #8c783e, 0px 0px 15px #8c783e,
+    0px 0px 20px #8c783e, 0px 0px 30px #8c783e, 0px 0px 40px #8c783e,
+    0px 0px 55px #8c783e, 0px 0px 75px #8c783e;
+}
+
+a:hover {
+  color: black;
+  transition: 0.2s;
+}
+
+.button-burger {
+  display: none;
+}
+
+/* Création effet néon cassé en lien avec les balises span */
+
+.flicker-slow {
+  animation: flicker 3s linear infinite;
+}
+
+.flicker-fast {
+  animation: flicker 1s linear infinite;
+}
+
+@keyframes flicker {
+  0%,
+  19.999%,
+  22%,
+  62.999%,
+  64%,
+  64.999%,
+  70%,
+  100% {
+    opacity: 0.99;
+  }
+  20%,
+  21.999%,
+  63%,
+  63.999%,
+  65%,
+  69.999% {
+    opacity: 0.4;
+  }
+}
+
+/* Menu Burger */
+
+@media screen and (max-width: 767px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .button-burger {
+    display: flex;
+  }
+
+  .burger {
+    width: 5em;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .bloc-liens {
+    display: none;
+  }
+
+  .show-list {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .bloc-logo {
+    display: none;
+  }
+}
