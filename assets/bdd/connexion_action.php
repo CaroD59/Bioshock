@@ -86,7 +86,7 @@ try{
                 //reset les tentatives
                 $_SESSION['tentative_app'] = 0;
     
-                header("Location: ../index.php");
+                header("Location: ../../index.php");
     
             } else {
                 //Mauvais password
@@ -101,7 +101,7 @@ try{
         }
     
     } else {
-        header("Location: ../connexion.php");
+        header("Location: ../../index.php?page=connexion");
     }
     
 

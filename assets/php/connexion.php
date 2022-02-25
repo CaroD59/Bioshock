@@ -11,12 +11,12 @@ if( $verif_co != 0){
 
 
 <head>
-    <link rel="stylesheet" href="css/connexion.css">
+    <link rel="stylesheet" href="assets/css/connexion.css">
 </head>
 
 <main>
 
-    <form method="POST" action="bdd/connexion_action.php">
+    <form method="POST" action="assets/bdd/connexion_action.php">
 
         <h3>Connexion</h3>
 
