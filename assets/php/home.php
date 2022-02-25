@@ -14,13 +14,13 @@
 <?php
     if( $verif_co != 0 ){
 ?>
-    <h1 class="bjr_pseudo">Bonjour <span id="co_pseudo"><?php echo  $_SESSION["logged_in"]["pseudo"]; ?></span></h1>
+    <h1 class="bjr_prenom">Bonjour <span id="co_prenom"><?php echo  $_SESSION["logged_in"]["prenom"]; ?></span></h1>
             
 <?php 
     }else if( $verif_co == 0){
 ?>
 
-    <h1 class="bjr_pseudo"><?php echo "Bonjour " ; ?></h1>
+    <h1 class="bjr_prenom"><?php echo "Bonjour " ; ?></h1>
 
 <?php 
 }

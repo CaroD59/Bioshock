@@ -1,7 +1,9 @@
+
 <head>
    <link rel="stylesheet" href="assets/css/header.css">
 </head>
 <body>
+  <header>
   <header class="header">
     <div class ="button-burger" id ="button-burger">
       <button class="burger" id="button-burger"><img src="assets/img/Site/burger.png" alt="" class="burger" id="burger"></button>
@@ -17,7 +19,7 @@
       <a href="#">Journal</a>
     </div>
     <div  class="lien">
-    <a href="index.php?page=produits" class="linky">Bo<span class="flicker-fast">u</span>tique</a>
+    <a href="index.php?page=panier/produits" class="linky">Bo<span class="flicker-fast">u</span>tique</a>
     </div>
     <div  class="lien">
       <a href="#">Contact</a>

@@ -51,7 +51,7 @@ if( $nom != "" && $prenom != "" && $email != ""  && $password_clair != ""  && $c
         // on bcrypt le mot de passe de l'utilisateur 
         $hash_password = password_hash( $password_clair, PASSWORD_BCRYPT);
 
-        require("bddconfig.php");
+        require("../bdd/bddconfig.php");
 
         try {
 
@@ -81,7 +81,7 @@ if( $nom != "" && $prenom != "" && $email != ""  && $password_clair != ""  && $c
 
             $_SESSION['tentative_app'] = 0;
 
-            header("Location: ../index.php");
+            header("Location: ../../index.php?page=connexion");
     
         } catch (Exception $prmE) {
             die('Erreur : ' . $prmE->getMessage());
@@ -90,5 +90,5 @@ if( $nom != "" && $prenom != "" && $email != ""  && $password_clair != ""  && $c
     }
 
 }else{
-    header("Location: ../inscription.php");
+    header("Location: ../../index.php?page=inscription");
 }

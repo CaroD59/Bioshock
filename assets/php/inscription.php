@@ -13,7 +13,7 @@ if( $verif_co != 0){
 
 <head>
 
-    <link rel="stylesheet" href="css/inscription.css">
+    <link rel="stylesheet" href="assets/css/inscription.css">
 
 </head>
 
@@ -26,7 +26,7 @@ if( $verif_co != 0){
     }
     ?>
 
-    <form method="POST" action="bdd/inscription_action.php">
+    <form method="POST" action="assets/bdd/inscription_action.php">
 
         <h3>INSCRIPTION</h3>
 
@@ -40,6 +40,7 @@ if( $verif_co != 0){
             <input type="text" name="prenom" required>
         </div>
 
+        
         <div class="content-form">
             <label for="email">Email *</label>
             <input type="email" name="email" required>
