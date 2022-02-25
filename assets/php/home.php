@@ -8,6 +8,7 @@
 
 <section id="section1">
 
+<div class="welcome">
 <?php
     if( $verif_co != 0 ){
 ?>
@@ -25,15 +26,25 @@
     <div>
         <img src="assets/img/Site/rapture.png" alt="" class="img__rapture">
     </div>
-   
+</div>   
     
 
 <?php 
 }
 ?>  
 
-<div>
-    <h2>Qu'est-ce que Rapture ?</h2>
+<div class="Ryan-Bloc">
+    <h2>Qui est Andrew Ryan ?</h2>
+    <div class="Ryan">
+        <div class="img-ryan">
+        <img src="assets/img/Site/ryan.jpg" alt="" class="ryan-img">
+    </div>
+        <div class="img-record">
+        <img src="assets/img/Site/audio.png" alt="" class="audio-png">
+        <img src="assets/img/Site/play.png" alt="" class="play-audio">
+    </div>
+        <div class="description">text</div>
+    </div>
 </div>
 
 </section>
