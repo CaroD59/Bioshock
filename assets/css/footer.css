@@ -1,8 +1,14 @@
 footer {
   width: 100%;
   background-color: black;
-}
-.footer {
   text-align: center;
   color: white;
+  font-family: 'Andes';
+  padding-top: 20px;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+
+p {
+  padding-bottom: 20px;
 }

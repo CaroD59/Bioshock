@@ -1,7 +1,6 @@
 
 <head>
-
-<!-- link ici -->
+<link rel="stylesheet" href="assets/css/home.css">
 </head>
 
 <body>
