@@ -26,16 +26,16 @@ require('assets/bdd/bddconfig.php');
 	 ?>
 
 	<div class="produit content-wrapper">
-	    <img src="assets/img/Items/<?=$produit['img']?>" width="500" height="500" alt="<?=$produit['nom']?>">
+	    <img src="assets/upload/<?=$produit['img']?>" width="500" height="500" alt="<?=$produit['nom']?>">
 	    <div>
 	        <h1 class="name"><?=$produit['nom']?></h1>
 	        <span class="price"> &euro;<?=$produit['prix']?>
-	              <?php if ($produit['prix_Réel'] > 0): ?>
-	             <span class="prix_Réel"> &euro;<?=$produit['prix_Réel']?></span>
+	              <?php if ($produit['prix_Reel'] > 0): ?>
+	             <span class="prix_Reel"> &euro;<?=$produit['prix_Reel']?></span>
 	             <?php endif; ?>
 	         </span>
 	         <form action="index.php?page=panier/panier" method="post">
-	             <input type="number" name="quantité" value="1" min="1" max="<?=$produit['quantité']?>" placeholder="Quantité" required>
+	             <input type="number" name="quantite" value="1" min="1" max="<?=$produit['quantite']?>" placeholder="Quantite" required>
 	             <input type="hidden" name="produit_id" value="<?=$produit['id']?>">            <input type="submit" value="Ajouter au panier">
 	         </form>
 	         <div class="description">

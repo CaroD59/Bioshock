@@ -2,8 +2,6 @@
 <link rel="stylesheet" href="assets/css/.css">
 </head>
 
-<!-- C du crud / CREER nouveau post -->
-
 
     <main id="main">
         
@@ -16,9 +14,13 @@
         
         
         <input type="file" name="file" class="inpFile" id="inpFile"  required />
+
+        <input type="text" name="nom" id="nom" required />nom
+        <input type="number" name="prix" id="prix" required />prix
+        <input type="number" name="prixReel" id="prixRéel" required />prixRéel
+        <input type="number" name="quantite" id="quantité" required />quantité
             
-            <textarea name="legende" id="legende" required placeholder="Écrivez une légende" maxlength="200"></textarea>  <br> <br>
-            <div id="compteur" style="text-align:right"> 0 / 200</div>
+            <textarea name="description" id="description" required placeholder="Écrivez une description" maxlength="200"></textarea>  <br> <br>
 
             <input type="submit" value="Envoyer" class="envoyer" required>   <br> <br>
 

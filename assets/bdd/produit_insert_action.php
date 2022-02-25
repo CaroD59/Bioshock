@@ -1,102 +1,94 @@
 <?php
-session_start();
 
-  
-$pseudo = htmlspecialchars($_SESSION["logged_in"]["prenom"]);
-$iduser = htmlspecialchars($_SESSION["logged_in"]["iduser"]);
- 
-$messageDescription =  htmlspecialchars($_POST["description"]);
-// rajouté pour test
+
+
+
+$nom = htmlspecialchars($_POST["nom"]);
+$description = htmlspecialchars($_POST["description"]);
+$prix = htmlspecialchars($_POST["prix"]);
+$prixReel = htmlspecialchars($_POST["prixReel"]);
+$quantite = htmlspecialchars($_POST["quantite"]);
+
+echo $nom  . "       ";
+echo $description  . "       ";
+echo $prixReel  . "       ";
+echo $quantite  . "       ";
+echo $description  . "       ";
+
+
+// PHP lui donne un nom temporaire
 $tmpName = $_FILES['file']['tmp_name'];
+// le nom du fichier
 $name = $_FILES['file']['name'];
+// recup la taille de t'image
 $size = $_FILES['file']['size'];
+// on recup les erreurs si il y en a 
 $error = $_FILES['file']['error'];
-//  fin rajout test
-require("bddconfig.php");
+
+echo $tmpName;
+echo "<br>";
+echo $name;
+echo "<br>";
+echo $size;
+echo "<br>";
+echo $error;
 
 
 try{
 
-    if(isset($_FILES['file']) && $messageDescription != "" && isset($iduser)){
+    if(isset($_FILES['file'])){
 
-        $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);  
-    
-        $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        
-        $PDOinsert = $objBdd->prepare("INSERT INTO `produits` ( `description`,`id`) VALUES ( :messageDescription, :iduser)" );
-    
-        $PDOinsert->bindParam(':pseudo' , $pseudo , PDO::PARAM_STR);
-        $PDOinsert->bindParam(':messageLegend' , $messageDescription , PDO::PARAM_STR);
-        $PDOinsert->bindParam(':iduser' , $iduser , PDO::PARAM_STR);
-        
-        $PDOinsert->execute();
-
-        $idpost = $objBdd->lastInsertId();
-     
-    
-
+        // explode separe la chaine => ( image.jpg -> ["image", "jpg"] ) Agis comme un split(".") en js 
         $tabExtension = explode('.', $name);
+        //strtolower met en minuscule tout une String
         $extension = strtolower(end($tabExtension));
+        //Extensions des images qu'on accepte seulement
         $extensions = ['jpg', 'png', 'jpeg', 'gif'];
-        $maxSize = 4000000;
-
+        //Va permettre la verification de la taille (ici c'est la taille a ne pas depasser)
+        $maxSize = 10000000;
         
+        //Verif si le fichier avec nos variables de verif au dessus
         if(in_array($extension, $extensions) && $size <= $maxSize && $error == 0){
-    
-            $uniqueName = uniqid('', true);
-            $file = $uniqueName.".".$extension;
-            
-            move_uploaded_file($tmpName, '../upload/'.$file);
 
-              $PDOinsertFile = $objBdd->prepare("INSERT INTO `file` (`image`, `idpost`,`idcompte`) VALUES (:file , :idpost, :iduser)" );
-              $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);  
-   
-              $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              $PDOinsertFile->bindParam(':file' , $file , PDO::PARAM_STR);
-              $PDOinsertFile->bindParam(':idpost' , $idpost , PDO::PARAM_STR);
-              $PDOinsertFile->bindParam(':iduser' , $iduser , PDO::PARAM_STR);
+            // recup les config bdd 
+            require("bddconfig.php");
     
-            $PDOinsertFile->execute();
-           
-            
+            //Avoir un nom unique par fichier
+            $uniqueName = uniqid('', true);
+            // on "creer" le nom du fichier 
+            $file = $uniqueName.".".$extension;
+            // Deplace le fichier vers notre dossier upload
+            move_uploaded_file($tmpName, '../upload/'.$file);
+            // Connecte a la base mysql
+            $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);  
+            // En cas de problème renvoie dans le catch avec l'erreur
+            $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            // ici on prepare notre requête SQL
+            $PDOInsertFile = $objBdd->prepare("INSERT INTO `produits` ( `nom`, `description`, `prix`, `img`, `prix_Reel`, `quantite`  ) VALUES ( :nom , :description , :prix , :img , :prixReel , :quantite )");
+            // on initialise notre :email avec la variable qui recup le email
+            $PDOInsertFile->bindParam(':img', $file, PDO::PARAM_STR);
+            $PDOInsertFile->bindParam(':description', $description, PDO::PARAM_STR);
+            $PDOInsertFile->bindParam(':nom', $nom, PDO::PARAM_STR);
+            $PDOInsertFile->bindParam(':prix', $prix, PDO::PARAM_STR);
+            $PDOInsertFile->bindParam(':prixReel', $prixReel, PDO::PARAM_STR);
+            $PDOInsertFile->bindParam(':quantite', $quantite, PDO::PARAM_STR);
+            // execute la requête SQL
+            $PDOInsertFile->execute();
+            //Renvoie sur la page d'accueil
             header("Location: ../../index.php");
 
-        
-
+        }else{
+            //Renvoie sur la page d'accueil
+            header("Location: ../index.php");
         }
+
+    }else{
+        //Renvoie sur la page d'accueil
+        header("Location: ../index.php");
     }
 
-     
-    //   if($messageLegend != ""  && $image!= "") {
+}catch(Exception $prmE){
+    //Affiche un message d'erreur
+    die('Erreur : '.$prmE->getMessage());
     
-    //     require('../bdd/bddconfig.php');
-    
-  
-    //     $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);  
-     
-    //     $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
-    //     $PDOlistlogins = $objBdd->prepare("SELECT * FROM post, file WHERE messageLegend = :messageLegend");
-        
-    //     $PDOlistlogins->bindParam(':messageLegend', $messageLegend, PDO::PARAM_STR);
-       
-    //     $PDOlistlogins->execute();
-    
-        
-    //     $row_userweb = $PDOlistlogins->fetch();
-
-    //     echo $row_userweb["mdp"];
-    
-        
-    
-    // }
-
-       
-    header('Location: ../php/profil_perso.php');
-
-}catch( Exception $prmE){
-
-    die("ERREUR : " . $prmE->getMessage());
-
 }

@@ -29,12 +29,12 @@
 	    <p><?=$total_produits?> produits</p>
 	    <div class="produits-wrapper"><table><tr>
 	        <?php foreach ($produits as $produit): ?>
-	        <td><a href="index.php?page=panier/produit&id=<?=$produit['id']?>" class="produit"> <img src="assets/img/Items/<?=$produit['img']?>" width="200" height="200" alt="<?=$produit['nom']?>"><br>
+	        <td><a href="index.php?page=panier/produit&id=<?=$produit['id']?>" class="produit"> <img src="assets/upload/<?=$produit['img']?>" width="200" height="200" alt="<?=$produit['nom']?>"><br>
 	            <span class="nom"><?=$produit['nom']?></span><br>
 	            <span class="price">
 	                &euro;<?=$produit['prix']?>
-	                <?php if ($produit['prix_Réel'] > 0): ?>  
-	               <span class="prix_Réel">&euro;<?=$produit['prix_Réel']?></span>
+	                <?php if ($produit['prix_Reel'] > 0): ?>  
+	               <span class="prix_Reel">&euro;<?=$produit['prix_Reel']?></span>
 	                <?php endif; ?>
 	            </span>
 	        </a></td>
