@@ -36,7 +36,7 @@ require('assets/bdd/bddconfig.php');
 	         </span>
 	         <form action="index.php?page=panier/panier" method="post">
 	             <input type="number" name="quantite" value="1" min="1" max="<?=$produit['quantite']?>" placeholder="Quantite" required>
-	             <input type="hidden" name="produit_id" value="<?=$produit['id']?>">            <input type="submit" value="Ajouter au panier">
+	             <input type="hidden" name="produit_id" value="<?=$produit['id']?>"> <input type="submit" value="Ajouter au panier">
 	         </form>
 	         <div class="description">
 	             <?=$produit['description']?>
