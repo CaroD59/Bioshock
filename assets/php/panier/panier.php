@@ -3,10 +3,10 @@ require('assets/bdd/bddconfig.php');
 
 
 	 /* Si l'utilisateur a cliqué sur le bouton "Ajouter au panier" sur la page du produit, nous pouvons vérifier les données du formulaire.*/   
-	 if (isset($_POST['produit_id'], $_POST['quantité']) && is_numeric($_POST['produit_id']) && is_numeric($_POST['quantité'])) {   
+	 if (isset($_POST['produit_id'], $_POST['quantite']) && is_numeric($_POST['produit_id']) && is_numeric($_POST['quantite'])) {   
 	     /* Définissez les variables post afin que nous puissions les identifier facilement, assurez-vous également qu'elles sont entières.*/   
 	     $produit_id = (int)$_POST['produit_id'];   
-	     $quantité = (int)$_POST['quantité'];  
+	     $quantite = (int)$_POST['quantite'];  
 
 		 $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);  
 		 // En cas de problème renvoie dans le catch avec l'erreur
@@ -18,19 +18,19 @@ require('assets/bdd/bddconfig.php');
 	     /* Récupère le produit depuis la base de données et renvoie le résultat sous forme de tableau.*/   
 	     $produit = $stmt->fetch(PDO::FETCH_ASSOC);   
 	     // Vérifier si le produit existe (le tableau n'est pas vide)   
-	     if ($produit && $quantité > 0) {   
+	     if ($produit && $quantite > 0) {   
 	         /*Le produit existe dans la base de données, maintenant nous pouvons créer/mettre à jour la variable de session pour le panier.*/   
 	         if (isset($_SESSION['panier']) && is_array($_SESSION['panier'])) {   
 	             if (array_key_exists($produit_id, $_SESSION['panier'])) {   
 	                 // Le produit existe dans le panier, il suffit de mettre à jour la quantité.   
-	                 $_SESSION['panier'][$produit_id] += $quantité;   
+	                 $_SESSION['panier'][$produit_id] += $quantite;   
 	             } else {   
 	                 // Le produit n'est pas dans le panier, ajoutez-le   
-	                 $_SESSION['panier'][$produit_id] = $quantité;   
+	                 $_SESSION['panier'][$produit_id] = $quantite;   
 	             }
 	         } else {   
 	             /* Il n'y a aucun produit dans le panier, ceci ajoutera le premier produit au panier.*/   
-	             $_SESSION['panier'] = array($produit_id => $quantité);   
+	             $_SESSION['panier'] = array($produit_id => $quantite);   
 	         }
 	     }   
 	     // Empêcher la resoumission des formulaires...   
@@ -50,13 +50,13 @@ require('assets/bdd/bddconfig.php');
 	 if (isset($_POST['update']) && isset($_SESSION['panier'])) {   
 		/* Boucle à travers les données postales afin de mettre à jour les quantités pour chaque produit du panier.*/   
 		foreach ($_POST as $k => $v) {   
-			if (strpos($k, 'quantité') !== false && is_numeric($v)) {   
-				$id = str_replace('quantité-', '', $k);   
-				$quantité = (int)$v;   
+			if (strpos($k, 'quantite') !== false && is_numeric($v)) {   
+				$id = str_replace('quantite-', '', $k);   
+				$quantite = (int)$v;   
 				// Effectuez toujours des contrôles et des validations   
-				if (is_numeric($id) && isset($_SESSION['panier'][$id]) && $quantité > 0) {   
+				if (is_numeric($id) && isset($_SESSION['panier'][$id]) && $quantite > 0) {   
 					// Mise à jour de la nouvelle quantité   
-					$_SESSION['panier'][$id] = $quantité;   
+					$_SESSION['panier'][$id] = $quantite;   
 				}
 			}   
 		}
@@ -121,14 +121,14 @@ require('assets/bdd/bddconfig.php');
 	                  <tr>   
 	                      <td class="img">   
 	                          <a href="index.php?page=panier/produit&id=<?=$produit['id']?>">   
-	                              <img src="assets/img/Items/<?=$produit['img']?>" width="50" height="50" alt="<?=$produit['nom']?>">   
+	                              <img src="assets/upload/<?=$produit['img']?>" width="50" height="50" alt="<?=$produit['nom']?>">   
 	                          </a>
 	                      </td>   
 	       <td><a href="index.php?page=panier/produit&id=<?=$produit['id']?>"><?=$produit['nom']?></a>   
 	                          <br>   
 	                          <a href="index.php?page=panier/panier&remove=<?=$produit['id']?>" class="remove"><i class="fas fa-trash">&nbsp;</i>Supprimer </a></td>   
 	                      <td class="prix">&euro;<?=$produit['prix']?></td>   
-	                      <td class="quantité"><input type="number" name="quantité-<?=$produit['id']?>" value="<?=$produits_in_panier[$produit['id']]?>" min="1" max="<?=$produit['quantité']?>" placeholder="quantité" required></td>   
+	                      <td class="quantite"><input type="number" name="quantite-<?=$produit['id']?>" value="<?=$produits_in_panier[$produit['id']]?>" min="1" max="<?=$produit['quantite']?>" placeholder="quantité" required></td>   
 	    <td class="prix">&euro;<?=$produit['prix']*$produits_in_panier[$produit['id']]?></td>   
 	                  </tr>   
 	                  <?php endforeach; ?>   
