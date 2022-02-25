@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Andes';
+  src: url('../fonts/Andes.ttf');
+}
+
+
 .header {
   display: flex;
   justify-content: space-between;
