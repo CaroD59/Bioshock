@@ -40,7 +40,7 @@
 
 	<div class="mb-3">
   		<label for="file" class="form-label">Fichier </label>
-  		<input class="form-control" name="file" accept=".jpg, .jpeg, .png, .gif" type="file" id="file">
+  		<input class="form-control" name="file" accept=".jpg, .jpeg, .png, .gif, .pdf" type="file" id="file">
 	</div>
 
 	<input type="submit" class="btn btn-primary mb-3" value="Envoyer"/>
