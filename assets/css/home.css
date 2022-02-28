@@ -3,8 +3,13 @@
   src: url('../fonts/Andes.ttf');
 }
 
+@font-face {
+  font-family: 'Coast';
+  src: url('../fonts/Coast.ttf');
+}
+
 main {
-  height: 100vh;
+  height: auto;
   background-color: black;
   color: white;
 }
@@ -38,6 +43,162 @@ main {
   animation: flicker 1s linear infinite;
 }
 
+#co_prenom:hover {
+  color: black;
+  transition: 0.2s;
+}
+
+.img__rapture {
+  padding-top: 20px;
+  width: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 50px;
+}
+
+/* Carrousel */
+
+/* Description */
+
+.Description-Bloc {
+  margin: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.text {
+  padding: 50px;
+}
+
+.img1 {
+  text-align: center;
+}
+
+/* Andrew Ryan */
+
+h2 {
+  padding: 50px;
+  font-family: 'Andes';
+  font-size: 2em;
+  letter-spacing: 0.3em;
+  color: #8c783e;
+}
+
+.Ryan {
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.andrew-ryan {
+  color: #132b30;
+}
+
+.ryan-img {
+  width: 300px;
+  border: 2px solid #8c783e;
+  border-radius: 20px;
+  animation: flicker 3s linear infinite;
+}
+
+.img-record {
+  display: flex;
+  flex-direction: column;
+}
+
+.audios {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.audio-png {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+}
+
+.play-me {
+  padding-top: 10px;
+  text-align: center;
+  font-family: 'Coast';
+  font-size: 30px;
+}
+
+.play-audio {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30px;
+  cursor: pointer;
+}
+
+.description {
+  border-radius: 20px;
+  background-color: #8c783e;
+  border: 1px solid #132b30;
+  border-radius: 20px;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+/* Accès */
+
+.Bloc-Accès {
+  padding: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.bloc-img-map {
+  text-align: center;
+}
+
+.img-map {
+  width: 600px;
+}
+
+/* Enseignes */
+
+.Bloc-Enseignes {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 50px;
+}
+
+.img-enseignes {
+  width: 250px;
+}
+
+.enseignes {
+  /* width: 900px; */
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.enseigne,
+.enseigne-flick,
+.enseigne-flick1 {
+  width: 200px;
+  padding: 20px;
+}
+
+.enseigne-flick {
+  animation: flicker 1s linear infinite;
+}
+
+.enseigne-flick1 {
+  animation: flicker 3s linear infinite;
+}
+
+/* Flicker Animation  */
+
 @keyframes flicker {
   0%,
   19.999%,
@@ -59,50 +220,33 @@ main {
   }
 }
 
-#co_prenom:hover {
-  color: black;
-  transition: 0.2s;
+@media screen and (max-width: 855px) {
+  .Description-Bloc,
+  .Bloc-Accès,
+  .Ryan {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .img-ryan {
+    text-align: center;
+  }
+
+  .img-record {
+    padding: 50px;
+  }
+
+  .img-map {
+    width: 400px;
+  }
 }
 
-.img__rapture {
-  padding-top: 20px;
-  width: 500px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 50px;
-}
+@media screen and (max-width: 450px) {
+  .img__rapture {
+    width: 200px;
+  }
 
-/* Andrew Ryan */
-
-.Ryan {
-  display: flex;
-  justify-content: space-around;
-}
-
-.ryan-img {
-  width: 300px;
-  border: 2px solid #8c783e;
-  border-radius: 20px;
-}
-
-.img-record {
-  display: flex;
-  flex-direction: column;
-}
-
-.audio-png {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100px;
-}
-
-.play-audio {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 10px;
-  width: 100px;
-  cursor: pointer;
+  .bjr_prenom {
+    font-size: 2.5em;
+  }
 }
