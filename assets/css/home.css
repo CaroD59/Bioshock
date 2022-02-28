@@ -57,8 +57,6 @@ main {
   padding-bottom: 50px;
 }
 
-/* Carrousel */
-
 /* Description */
 
 .Description-Bloc {
@@ -69,6 +67,7 @@ main {
 
 .text {
   padding: 50px;
+  font-family: 'Californian FB';
 }
 
 .img1 {
@@ -143,6 +142,7 @@ h2 {
   border-radius: 20px;
   margin-top: 50px;
   padding: 20px;
+  font-family: 'Californian FB';
 }
 
 /* Accès */
@@ -219,6 +219,8 @@ h2 {
     opacity: 0.4;
   }
 }
+
+/* RESPONSIVE  */
 
 @media screen and (max-width: 855px) {
   .Description-Bloc,

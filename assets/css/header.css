@@ -31,7 +31,7 @@
   margin: auto;
 }
 
-a {
+.linky {
   padding: 20px;
   font-family: 'Andes';
   color: rgb(202, 197, 197);
@@ -44,7 +44,7 @@ a {
     0px 0px 55px #8c783e, 0px 0px 75px #8c783e;
 }
 
-a:hover {
+.linky:hover {
   color: black;
   transition: 0.2s;
 }

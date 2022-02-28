@@ -1,5 +1,6 @@
 <head>
 <link rel="stylesheet" href="assets/css/home.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -39,11 +40,11 @@
 
 <!-- BLOC DESCRIPTION SITE -->
 
-<div>
+<div data-aos="fade-down">
     <h2>Qu'est-ce donc <span class="andrew-ryan">Rapture</span> ?</h2>
 </div>
 
-<div class="Description-Bloc">
+<div class="Description-Bloc" data-aos="fade-down">
  <div class="text">
     <p>
          Description
@@ -56,11 +57,11 @@
 
 <!-- BLOC ANDREW RYAN -->
 
-<div>
+<div data-aos="fade-down">
     <h2>Qui est <span class="andrew-ryan">Andrew Ryan</span> ?</h2>
 </div>
 
-<div class="Ryan-Bloc">
+<div class="Ryan-Bloc" data-aos="fade-down">
     <div class="Ryan">
     <div class="img-ryan">
         <img src="assets/img/Site/ryan.jpg" alt="" class="ryan-img">
@@ -81,21 +82,27 @@
 </div>
 
 <!-- BLOC ACCES -->
-<div>
+<div data-aos="fade-down">
     <h2>Plan d'acces a <span class="andrew-ryan">Rapture</span></h2>
 </div>
 
-<div class="Bloc-Accès">
+<div class="Bloc-Accès" data-aos="fade-down">
     <div class="bloc-img-map"><img src="assets/img/Site/map.jpg" alt="" class="img-map"></div>
     <div><p class="text">Plan d'accès</p></div>
 </div>
 
 
 <!-- BLOC ENSEIGNES -->
-<div>
+<div data-aos="fade-down">
     <h2>Enseignes a <span class="andrew-ryan">Rapture</span></h2>
 </div>
-<div class="Bloc-Enseignes">
+
+<div data-aos="fade-down">
+    <?php require_once('assets/template/carrousel.php'); ?>
+</div>
+
+
+<div class="Bloc-Enseignes" data-aos="fade-down">
     <div class="enseignes">
         <div class="imgs-enseignes">
         <img src="assets/img/Site/Enseignes/arcadia.png" alt="" class="enseigne-flick">
@@ -152,3 +159,10 @@
 </body>
 
 <script src="assets/js/home-play-audio.js"></script>
+
+<!-- AOS ANIMATION  -->
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
