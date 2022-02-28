@@ -1,9 +1,9 @@
 <?php
 
+require("../../bdd/bddconfig.php");
+
 $titre = htmlspecialchars(addslashes($_POST["titre"]));
 $id = htmlspecialchars($_POST["idjournal"]);
-
-require("../bdd/bddconfig.php");
 
 try{
 
@@ -19,7 +19,7 @@ try{
    
     $recup->execute();
     
-    header('Location: ../../index.php');
+    header('Location: ../../../index.php');
 
 }catch( Exception $prmE){
 
