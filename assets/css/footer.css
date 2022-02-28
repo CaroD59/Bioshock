@@ -13,8 +13,10 @@ footer {
   font-size: 10px;
   letter-spacing: 0.1em;
   border-top: 3px solid #8c783e;
+  margin: 0;
 }
 
 p {
   padding-bottom: 20px;
+  margin-bottom: 0;
 }

@@ -23,7 +23,7 @@
       <div class="carousel-caption d-none d-md-block">
         <h5 class="titre-img-carousel">Lisez notre journal hebdomadaire !</h5>
         <!-- LINK A MODIFIER -->
-        <p class="p-img-carousel">Un journal tout public est disponible chaque semaine <a href="index.php?page=panier/produits" target="_blank" class="link-carousel">ici</a> pour vous tenir informer des <span class="carousel-blink">dernières nouvelles</span> de Rapture.</p>
+        <p class="p-img-carousel">Un journal tout public est disponible chaque semaine <a href="index.php?page=journal/journals" target="_blank" class="link-carousel">ici</a> pour vous tenir informer des <span class="carousel-blink">dernières nouvelles</span> de Rapture.</p>
       </div>
     </div>
     <div class="carousel-item">

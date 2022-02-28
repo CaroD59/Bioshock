@@ -65,13 +65,12 @@ main {
   justify-content: space-around;
 }
 
-.text {
-  padding: 50px;
-  font-family: 'Californian FB';
-}
-
 .img1 {
   text-align: center;
+}
+
+.text {
+  font-family: 'Californian FB';
 }
 
 /* Andrew Ryan */
@@ -137,12 +136,34 @@ h2 {
 
 .description {
   border-radius: 20px;
-  background-color: #8c783e;
-  border: 1px solid #132b30;
+  background-color: #132b30;
+  border: 3px solid #8c783e;
   border-radius: 20px;
   margin-top: 50px;
   padding: 20px;
   font-family: 'Californian FB';
+  width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.description-ryan {
+  font-size: 1.5em;
+  color: #a3a3a3;
+  text-align: justify;
+}
+
+.span-ryan {
+  font-weight: bold;
+  color: #8c783e;
+}
+
+.typewriter {
+  font-size: 1.5em;
+  text-align: justify;
+  color: #8c783e;
+  font-style: italic;
 }
 
 /* Accès */
@@ -150,7 +171,11 @@ h2 {
 .Bloc-Accès {
   padding: 50px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  border-radius: 20px;
+  background-color: #132b30;
+  border: 3px solid #8c783e;
+  margin: 50px;
 }
 
 .bloc-img-map {
@@ -159,6 +184,49 @@ h2 {
 
 .img-map {
   width: 600px;
+}
+
+.text-acces,
+.text-titre-acces {
+  font-family: 'Californian FB';
+}
+
+.text-acces,
+.text-acces-warning {
+  text-align: justify;
+  color: #a3a3a3;
+}
+
+.text-acces-warning {
+  border: 2px solid red;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.text-titre-acces {
+  padding-bottom: 50px;
+  font-family: 'Andes';
+  text-align: center;
+  color: rgb(202, 197, 197);
+  text-decoration: none;
+  font-size: 2em;
+  text-shadow: 0px 0px 5px #8c783e, 0px 0px 10px #8c783e, 0px 0px 15px #8c783e,
+    0px 0px 20px #8c783e, 0px 0px 30px #8c783e, 0px 0px 40px #8c783e,
+    0px 0px 55px #8c783e, 0px 0px 75px #8c783e;
+}
+
+.description-acces {
+  font-size: 1.5em;
+  padding: 30px;
+  font-family: 'Californian FB';
+}
+
+.warning {
+  padding-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 5vw;
 }
 
 /* Enseignes */
@@ -174,7 +242,6 @@ h2 {
 }
 
 .enseignes {
-  /* width: 900px; */
   padding-top: 50px;
   display: flex;
   justify-content: space-around;
@@ -222,9 +289,15 @@ h2 {
 
 /* RESPONSIVE  */
 
+@media screen and (max-width: 1200px) {
+  .Bloc-Accès {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+
 @media screen and (max-width: 855px) {
   .Description-Bloc,
-  .Bloc-Accès,
   .Ryan {
     flex-direction: column;
     flex-wrap: wrap;
@@ -241,14 +314,32 @@ h2 {
   .img-map {
     width: 400px;
   }
+
+  .description {
+    width: 100%;
+  }
+
+  .Bloc-Accès {
+    font-size: 1em;
+    margin: 0;
+    width: 100%;
+    padding: 10px;
+  }
 }
 
 @media screen and (max-width: 450px) {
+  .carousel {
+    display: none;
+  }
+
   .img__rapture {
     width: 200px;
   }
 
   .bjr_prenom {
     font-size: 2.5em;
+  }
+  .typewriter {
+    display: none;
   }
 }
