@@ -16,7 +16,7 @@
     <a href="index.php?page=home" class="linky">H<span class="flicker-slow">o</span>me</a>
     </div>
     <div  class="lien">
-      <a href="#">Journal</a>
+      <a href="index.php?page=journal/journals">Journal</a>
     </div>
     <div  class="lien">
     <a href="index.php?page=panier/produits" class="linky">Bo<span class="flicker-fast">u</span>tique</a>
