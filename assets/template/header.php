@@ -21,7 +21,7 @@
     <a href="index.php?page=panier/produits" class="linky">Bo<span class="flicker-fast">u</span>tique</a>
     </div>
     <div  class="lien">
-      <a href="#">Contact</a>
+      <a href="index.php?page=Envoie_mail">Contact</a>
     </div>
     <div  class="lien">
     <a href="index.php?page=profil_update" class="linky">Modifier mon profil</a>
