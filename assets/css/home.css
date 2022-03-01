@@ -276,6 +276,18 @@ h2 {
   animation: flicker 3s linear infinite;
 }
 
+/* Bouton top  */
+
+.btn-top {
+  text-align: center;
+}
+
+#submarine-btn {
+  padding: 20px;
+  width: 7em;
+  cursor: pointer;
+}
+
 /* Flicker Animation  */
 
 @keyframes flicker {

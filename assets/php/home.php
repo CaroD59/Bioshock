@@ -165,6 +165,12 @@
     </div>
 </div>
 
+<!-- BLOC TOP BUTTON  -->
+
+<div class="btn-top"  data-aos="fade-down">
+    <img src="assets/img/Site/submarine.png" alt="sub" id="submarine-btn">
+</div>
+
 </section>
 
 </main>
@@ -173,6 +179,7 @@
 
 <script src="assets/js/home-play-audio.js"></script>
 <script src="assets/js/home.js"></script>
+<script src="assets/js/btn-top.js"></script>
 
 <!-- AOS JS ANIMATION  -->
 
