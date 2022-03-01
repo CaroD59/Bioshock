@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Andes';
+  src: url('../fonts/Andes.ttf');
+}
+
 footer {
   width: 100%;
   background-color: black;
@@ -7,8 +12,11 @@ footer {
   padding-top: 20px;
   font-size: 10px;
   letter-spacing: 0.1em;
+  border-top: 3px solid #8c783e;
+  margin: 0;
 }
 
 p {
   padding-bottom: 20px;
+  margin-bottom: 0;
 }
