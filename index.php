@@ -6,7 +6,12 @@ session_start();
 $_SESSION["secure_id"] = md5(time());
 
 // on initialise la variable de tentative max 
-$_SESSION["tentative_app"] = intval($_SESSION['tentative_app']);
+
+if( !isset($_SESSION["tentative_app"])){
+    $_SESSION["tentative_app"] = 0;
+}else{
+    $_SESSION["tentative_app"] = intval($_SESSION['tentative_app']);
+}
 
 
 // on regarde di la variable crée avec la page de connexion est créé
