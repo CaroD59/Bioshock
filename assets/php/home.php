@@ -162,12 +162,15 @@
         <div class="imgs-enseignes">
         <img src="assets/img/Site/Enseignes/siren-alley.png" alt="" class="enseigne">
         </div>
+        <div class="imgs-enseignes">
+        <img src="assets/img/Site/Enseignes/fleet.png" alt="" class="enseigne">
+        </div>
     </div>
 </div>
 
 <!-- BLOC TOP BUTTON  -->
 
-<div class="btn-top"  data-aos="fade-down">
+<div class="btn-top">
     <img src="assets/img/Site/submarine.png" alt="sub" id="submarine-btn">
 </div>
 

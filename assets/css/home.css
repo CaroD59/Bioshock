@@ -11,7 +11,6 @@
 main {
   height: auto;
   background-color: black;
-  color: white;
 }
 
 /* Bienvenue */
@@ -33,6 +32,7 @@ main {
   letter-spacing: 0.3em;
   text-align: center;
   color: #8c783e;
+  font-weight: normal;
 }
 
 #co_prenom {
@@ -86,6 +86,10 @@ main {
 }
 
 /* Andrew Ryan */
+
+.Ryan-Bloc {
+  padding-bottom: 50px;
+}
 
 h2 {
   padding: 50px;
@@ -280,12 +284,33 @@ h2 {
 
 .btn-top {
   text-align: center;
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 100px;
 }
 
 #submarine-btn {
+  animation: float 6s ease-in-out infinite;
   padding: 20px;
   width: 7em;
   cursor: pointer;
+}
+
+/* Float Animation */
+
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-20px);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
 }
 
 /* Flicker Animation  */
@@ -358,6 +383,10 @@ h2 {
 
   .carousel {
     display: none;
+  }
+
+  .btn-top {
+    position: static;
   }
 }
 
