@@ -40,5 +40,3 @@ if( $verif_co != 0){
         <a href="index.php?page=inscription" class="redirection">S'inscire</a>
 
     </form>
-
-</main>

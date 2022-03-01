@@ -30,7 +30,7 @@
 	    <p><?=$total_journals?> journal</p>
 	    <div class="journals-wrapper"><table><tr>
 	        <?php foreach ($journals as $journal): ?>
-	        <td><a href="index.php?page=journal/journals&idjournal=<?=$journal['idjournal']?>" class="journal"> <img src="assets/upload/<?=$journal['img']?>" width="200" height="200" alt="<?=$journal['titre']?>"><br>
+	        <td><a href="index.php?page=journal/journals&idjournal=<?=$journal['idjournal']?>" class="journal"> <a href="index.php?page=article/articles&idarticle"><img src="assets/upload/<?=$journal['img']?>" width="200" height="200" alt="<?=$journal['titre']?>"></a><br>
           
 	            <span class="titre"><?=$journal['titre']?></span><br>
                 <div>

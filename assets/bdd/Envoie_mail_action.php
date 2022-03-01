@@ -41,7 +41,9 @@ function smtpMailer($to, $from, $subject, $body) {
 	$mail->SetFrom($from);
 	$mail->Subject = $subject;
 	$mail->Body = $body;
-	$mail->addAttachment('../upload/'.$piece_jointe);
+	if($piece_jointe != ""){
+		$mail->addAttachment('../upload/'.$piece_jointe);
+	}
 	$mail->AddAddress($to);
 	
 	if(!$mail->Send()) {
