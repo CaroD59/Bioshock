@@ -60,17 +60,29 @@ main {
 /* Description */
 
 .Description-Bloc {
-  margin: 30px;
-  display: flex;
-  justify-content: space-around;
-}
-
-.img1 {
-  text-align: center;
-}
-
-.text {
+  margin-top: 20px;
+  border-radius: 20px;
+  background-color: #132b30;
+  border: 3px solid #8c783e;
+  padding: 20px;
   font-family: 'Californian FB';
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.5em;
+  color: #a3a3a3;
+  text-align: justify;
+  margin-bottom: 50px;
+  width: 50%;
+}
+
+.imgs-description {
+  width: 6em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  animation: flicker 3s linear infinite;
 }
 
 /* Andrew Ryan */
@@ -296,6 +308,12 @@ h2 {
   }
 }
 
+@media screen and (max-width: 1085px) {
+  .Description-Bloc {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 855px) {
   .Description-Bloc,
   .Ryan {
@@ -325,13 +343,13 @@ h2 {
     width: 100%;
     padding: 10px;
   }
-}
 
-@media screen and (max-width: 450px) {
   .carousel {
     display: none;
   }
+}
 
+@media screen and (max-width: 450px) {
   .img__rapture {
     width: 200px;
   }

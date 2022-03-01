@@ -24,8 +24,6 @@
 <?php 
     }else if( $verif_co == 0){
 ?>
-
-    <!-- <h1 class="bjr_pseudo"><?php echo "Bonjour " ; ?></h1> -->
     <h1 class ="bjr_prenom">Bienvenue a</h1>
     <div>
         <img src="assets/img/Site/rapture.png" alt="" class="img__rapture">
@@ -45,14 +43,14 @@
 </div>
 
 <div class="Description-Bloc" data-aos="fade-down">
- <div class="text">
-    <p>
-         Description
+    <p class ="text-titre-acces">
+         Tout cela commence par un phare...
     </p>
- </div>
- <div class="img1">
-    <img src="assets/img/Site/rapture-description.jpg" alt="" class="imgs-description">
- </div>
+    <img src="assets/img/Site/lighthouse-rapture.png" alt="lighthouse" class="imgs-description">
+    <p class="presentation-rapture">Bienvenue à <span class="span-ryan">Rapture</span>, la cité sous-marine créée par Andrew Ryan, perdue au beau milieu de l'Atlantique où tous vos rêves les plus fous peuvent se réaliser ! Une <span class="span-ryan">ville cachée des vices de ce monde</span>, de la cruauté humaine, où chacun pourrait entreprendre comme il l’entend et où la science ne s’embarrasserait pas d’éthique pour avancer. Dans cet idyllique cosme ultra-libéral, <span class="span-ryan">nul n’aurait à craindre la guerre</span> qui s’annonce en surface. Une <span class="span-ryan">plongée dans la folie</span> vous attend...</p>
+    <p class ="text-titre-acces">
+         Ni Dieu... ni roi... le pouvoir... a l'homme !
+    </p>
 </div>
 
 <!-- BLOC ANDREW RYAN -->
@@ -87,6 +85,7 @@
     </div>
 
 <!-- BLOC ACCES -->
+
 <div data-aos="fade-down">
     <h2>Plan d'acces a <span class="andrew-ryan">Rapture</span></h2>
 </div>
@@ -102,16 +101,19 @@
     </div>
 </div>
 
-
 <!-- BLOC ENSEIGNES -->
+
 <div data-aos="fade-down">
     <h2>Enseignes a <span class="andrew-ryan">Rapture</span></h2>
 </div>
+
+<!-- CARROUSEL -->
 
 <div data-aos="fade-down" class="carousel">
     <?php require_once('assets/template/carrousel.php'); ?>
 </div>
 
+<!-- CARROUSEL -->
 
 <div class="Bloc-Enseignes" data-aos="fade-down">
     <div class="enseignes">
@@ -172,7 +174,7 @@
 <script src="assets/js/home-play-audio.js"></script>
 <script src="assets/js/home.js"></script>
 
-<!-- AOS ANIMATION  -->
+<!-- AOS JS ANIMATION  -->
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
