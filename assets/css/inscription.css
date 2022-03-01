@@ -1,0 +1,312 @@
+@font-face {
+  font-family: 'Coast';
+  src: url('../fonts/Coast.ttf');
+}
+
+body {
+  height: auto;
+  background-color: black;
+  color: #a3a3a3;
+}
+
+/* Bienvenue  */
+
+.inscription {
+  background-image: url('/Bioshock/assets/img/Site/inscription.jpg');
+  background-color: black;
+  height: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: 3px solid #8c783e;
+}
+
+.titre-inscription {
+  padding-top: 50px;
+  font-family: 'Andes';
+  font-size: 3em;
+  letter-spacing: 0.3em;
+  text-align: center;
+  color: #8c783e;
+  font-weight: normal;
+}
+
+.img__rapture {
+  padding-top: 20px;
+  width: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 50px;
+}
+
+/* Audio */
+
+.img-record {
+  margin-top: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.audios {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.audio-png {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+}
+
+.play-me {
+  padding-top: 10px;
+  text-align: center;
+  font-family: 'Coast';
+  font-size: 30px;
+}
+
+.play-audio {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30px;
+  cursor: pointer;
+}
+
+/* Form  */
+
+.imgs-description {
+  width: 6em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  animation: flicker 3s linear infinite;
+}
+
+form {
+  margin-top: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Californian FB';
+  border-radius: 20px;
+  background-color: #132b30;
+  border: 3px solid #8c783e;
+  padding: 50px;
+  width: 70%;
+  font-size: 1.5em;
+  margin-bottom: 50px;
+}
+
+.div-input {
+  padding-bottom: 20px;
+}
+
+.content-form {
+  text-align: center;
+}
+
+.input-connexion {
+  background: #132b30;
+  color: #a3a3a3;
+  text-align: center;
+  font-family: 'Californian FB';
+  border: none;
+  outline: none;
+  padding-top: 20px;
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-bottom: 20px;
+  margin: 10px;
+  font-size: 1em;
+  border-bottom: 3px solid #8c783e;
+}
+
+.input-connexion::placeholder {
+  font-family: 'Californian FB';
+  color: #a3a3a3;
+  opacity: 0.33;
+}
+
+.input-form {
+  font-family: 'Andes';
+  font-size: 1em;
+  letter-spacing: 0.3em;
+  color: #8c783e;
+}
+
+input {
+  background-color: transparent;
+}
+
+.star-required {
+  color: red;
+}
+
+.btn-submit {
+  margin-top: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  background: #8c783e;
+  padding-top: 20px;
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+  font-family: 'Andes';
+  color: #a3a3a3;
+  font-size: 1em;
+  letter-spacing: 0.2em;
+}
+
+.btn-submit:hover {
+  color: white;
+  transition: 0.5s;
+  box-shadow: 0px 0px 5px #fff, 0px 0px 10px #fff, 0px 0px 15px #fff,
+    0px 0px 20px #fff, 0px 0px 30px #fff, 0px 0px 40px #fff, 0px 0px 55px #fff,
+    0px 0px 75px #fff;
+}
+
+.container-href {
+  text-align: center;
+}
+
+.redirection {
+  padding-bottom: 50px;
+  font-family: 'Andes';
+  color: rgb(202, 197, 197);
+  text-decoration: none;
+  font-size: 1em;
+  text-shadow: 0px 0px 5px #8c783e, 0px 0px 10px #8c783e, 0px 0px 15px #8c783e,
+    0px 0px 20px #8c783e, 0px 0px 30px #8c783e, 0px 0px 40px #8c783e,
+    0px 0px 55px #8c783e, 0px 0px 75px #8c783e;
+  animation: flicker 3s linear infinite;
+}
+
+.redirection:hover {
+  color: black;
+  transition: 0.2s;
+}
+
+/* Bouton top  */
+
+.btn-top {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 100px;
+}
+
+#submarine-btn {
+  animation: float 6s ease-in-out infinite;
+  padding: 20px;
+  width: 7em;
+  cursor: pointer;
+}
+
+/* Float Animation */
+
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-20px);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+}
+
+/* Flicker Animation  */
+
+@keyframes flicker {
+  0%,
+  19.999%,
+  22%,
+  62.999%,
+  64%,
+  64.999%,
+  70%,
+  100% {
+    opacity: 0.99;
+  }
+  20%,
+  21.999%,
+  63%,
+  63.999%,
+  65%,
+  69.999% {
+    opacity: 0.4;
+  }
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 855px) {
+  form {
+    width: 100%;
+  }
+
+  .btn-submit:hover {
+    box-shadow: none;
+  }
+
+  .btn-top {
+    position: static;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sister {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .img__rapture {
+    width: 200px;
+  }
+
+  .titre-connexion {
+    font-size: 2.5em;
+  }
+
+  .input-connexion {
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    margin-bottom: 50px;
+    margin: 10px;
+    font-size: 0.5em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .btn-submit {
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    margin-bottom: 50px;
+    font-family: 'Andes';
+    color: #a3a3a3;
+    font-size: 1em;
+    letter-spacing: normal;
+  }
+}
