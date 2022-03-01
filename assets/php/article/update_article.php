@@ -12,7 +12,7 @@ try{
  
     $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $recup = $objBdd->prepare("UPDATE `article` SET `titre`, `resume` = :titre, :resume WHERE `idarticle` = :id ");
+    $recup = $objBdd->prepare("UPDATE `article` SET `titre`  = :titre,`resume` = :resume WHERE `idarticle` = :id ");
     
     
     $recup->bindParam(':id' , $id , PDO::PARAM_STR);

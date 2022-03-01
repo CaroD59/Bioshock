@@ -2,7 +2,7 @@
 
 $titre = htmlspecialchars($_POST["titre"]);
 $resume = htmlspecialchars($_POST["resume"]);
-$idjournal = htmlspecialchars($_POST["idjournal"]);
+$idjournal = htmlspecialchars($_GET["idjournal"]);
 
 
 

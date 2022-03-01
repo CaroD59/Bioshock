@@ -17,10 +17,9 @@
 
         <input type="text" name="titre" id="titre" required />Titre
        
+        <input type="submit" value="Envoyer" class="envoyer" required>   <br> <br>
 
-            <input type="submit" value="Envoyer" class="envoyer" required>   <br> <br>
-
-        </form>
+    </form>
         
 
 
