@@ -49,7 +49,7 @@ function smtpMailer($to, $from, $subject, $body) {
 	if(!$mail->Send()) {
 		return 'Mail error: '.$mail->ErrorInfo;
 		
-		$_SESSION["message"] = "Mail pas ok";
+		$_SESSION["message"] = "Une erreur est survenue, veuillez réessayer ultérieurement...";
 		$_SESSION['alert'] = "danger";
 			
 		header("Location: index.php");
@@ -57,7 +57,7 @@ function smtpMailer($to, $from, $subject, $body) {
 	} else {
 		echo "Message envoyé !";
 
-		$_SESSION["message"] = "Mail ok";
+		$_SESSION["message"] = "Votre dernier mail a bien été envoyé.";
 		$_SESSION['alert'] = "success";
 		
 		header("Location: ../../index.php");

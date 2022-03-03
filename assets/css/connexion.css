@@ -3,6 +3,11 @@
   src: url('../fonts/Coast.ttf');
 }
 
+@font-face {
+  font-family: 'Andes';
+  src: url('../fonts/Andes.ttf');
+}
+
 body {
   height: auto;
   background-color: black;
@@ -150,10 +155,6 @@ form {
   font-size: 1em;
   letter-spacing: 0.3em;
   color: #8c783e;
-}
-
-input {
-  background-color: transparent;
 }
 
 .star-required {
