@@ -26,17 +26,32 @@
 
 	<div class="journals content-wrapper">
 	    <h1>Journals</h1>
-        <a href="index.php?page=journal/create_journal" class="post"> Créer un journal</a>
+		<?php
+		if($type == "admin"){
+		?>
+			<a href="index.php?page=journal/create_journal" class="post"> Créer un journal</a>
+			
+		<?php
+		}
+		?>	    
+        
 	    <p><?=$total_journals?> journal</p>
 	    <div class="journals-wrapper"><table><tr>
 	        <?php foreach ($journals as $journal): ?>
 	        <td><a href="index.php?page=journal/journals&idjournal=<?=$journal['idjournal']?>" class="journal"> <a href="index.php?page=article/articles&idjournal=<?= $journal['idjournal'] ?>"><img src="assets/upload/<?=$journal['img']?>" width="200" height="200" alt="<?=$journal['titre']?>"></a><br>
           
 	            <span class="titre"><?=$journal['titre']?></span><br>
+				<?php
+				if($type == "admin"){
+					?>
+				
                 <div>
                     <a onclick="return checkdelete()" href="assets/bdd/delete_journal.php?id= <?php echo $journal["idjournal"] ?>">Delete</a>
                     <a href="index.php?page=journal/update_post_journal&id=<?php echo $journal["idjournal"] ?>">Update</a>
                 </div>
+				<?php			
+			}
+			?>
 	        </a></td>
 	        <?php endforeach; ?>
 	               </tr></table>

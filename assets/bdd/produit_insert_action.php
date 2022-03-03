@@ -1,8 +1,6 @@
 <?php
 
 
-
-
 $nom = htmlspecialchars($_POST["nom"]);
 $description = htmlspecialchars($_POST["description"]);
 $prix = htmlspecialchars($_POST["prix"]);

@@ -1,4 +1,5 @@
-<?php 
+
+<?php
 	/* Determiner le nombre de produits à afficher sur chaque page*/
 	$nbr_articles_sur_chaque_page = 10;
 	/* La page actuelle, apparaîtra dans l'URL  comme index.php?page=journal&p=1 ou p=2 ce signifié la page 1 l& page 2 etc...*/
@@ -35,18 +36,33 @@
 
 	<div class="articles content-wrapper">
 	    <h1>Articles</h1>
-        <a href="index.php?page=article/create_article&idjournal=<?php echo $_GET['idjournal'] ?>" class="post"> Créer un article</a>
-	    <p><?=$total_articles?> article</p>
+		<!-- si admin on voit le bouton créer -->
+		<?php
+		if($type == "admin"){
+		?>
+			<a href="index.php?page=article/create_article&idjournal=<?php echo $_GET['idjournal'] ?>" class="post"> Créer un article</a>
+			
+		<?php
+		}
+		?>	    
+		<p><?=$total_articles?> article</p>
 	    <div class="articles-wrapper"><table><tr>
 	        <?php foreach ($articles as $article): ?>
 	        <td><a href="index.php?page=article/articles&idarticle=<?=$article['idarticle']?>" class="articles"> <a href="index.php?page=journal/journals&idarticle=<?= $article['idarticle'] ?>"><img src="assets/upload/<?=$article['img']?>" width="200" height="200" alt="<?=$article['titre']?>"></a><br>
           
 	            <span class="titre"><?=$article['titre']?></span><br>
 	            <span class="resume"><?=$article['resume']?></span><br>
+				<!-- si admin on voit les boutton update et delete -->
+				<?php
+				if($type == "admin"){
+					?>			
                 <div>
                     <a onclick="return checkdelete()" href="assets/bdd/delete_article.php?id= <?php echo $article["idarticle"] ?>">Delete</a>
                     <a href="index.php?page=article/update_post_article&id=<?php echo $article["idarticle"] ?>">Update</a>
                 </div>
+				<?php
+			}
+			?>
 	        </a></td>
 	        <?php endforeach; ?>
 	               </tr></table>

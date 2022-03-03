@@ -1,26 +1,31 @@
+
 <?php
+//si different de admin alors on renvoie vers la page connexion
+if($type != "admin"){
+    header("Location: ../../index.php?page=connexion");
+}else{
+  $idjournal = htmlspecialchars ($_GET["id"]);
 
-$idjournal = htmlspecialchars ($_GET["id"]);
+  require("bddconfig.php");
 
-require("bddconfig.php");
+  try{
+          //   connecte a la base mysql
+      $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
+      // En cas de probléme renvoie dans le catch avec l'erreeur
+      $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-try{
-        //   connecte a la base mysql
-    $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
-    // En cas de probléme renvoie dans le catch avec l'erreeur
-    $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $recup = $objBdd->query("DELETE FROM `journal` WHERE `idjournal` = $idjournal");
 
-    $recup = $objBdd->query("DELETE FROM `journal` WHERE `idjournal` = $idjournal");
-
-   
-    //  Renvoie sur la page index.php
-    header('Location: ../../index.php');
     
+      //  Renvoie sur la page index.php
+      header('Location: ../../index.php');
+      
 
-}catch( Exception $prme){
+  }catch( Exception $prme){
 
-// Affiche le message d'erreur
-  die("ERREUR : " . $prme->getMessage());
+  // Affiche le message d'erreur
+    die("ERREUR : " . $prme->getMessage());
+  }
+
 }
-
 ?>
