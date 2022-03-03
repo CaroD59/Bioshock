@@ -26,6 +26,16 @@
 
 	<div class="produits content-wrapper">
 	    <h1>produits</h1>
+		<!-- si admin alors on vera le bouton créer -->
+		<?php
+		if($type == "admin"){
+		?>
+			<a href="index.php?page=create_produit" class="post"> Créer un produits</a>
+			
+		<?php
+		}
+		?>
+		
 	    <p><?=$total_produits?> produits</p>
 	    <div class="produits-wrapper"><table><tr>
 	        <?php foreach ($produits as $produit): ?>

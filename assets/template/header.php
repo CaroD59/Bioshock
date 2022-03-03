@@ -30,9 +30,9 @@
     <div  class="lien">
     <a href="index.php?page=connexion" class="linky">Con<span class="flicker-fast">n<span>exion</a> 
     </div>
-    <div  class="lien">
+    <!-- <div  class="lien">
     <a href="index.php?page=inscription" class="linky">Inscription</a>
-    </div>
+    </div> -->
     <div  class="lien">
     <a href="index.php?page=deconnexion" class="linky"><span class="flicker-slow">Deconnexion</span></a>
     </div>

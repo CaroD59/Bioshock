@@ -1,3 +1,11 @@
+<?php
+//si different de admin alors on renvoie vers la page connexion
+if($type != "admin"){
+    header("location: index.php?page=connexion");
+}
+?>
+
+
 <head>
 
 <link rel="stylesheet" href="assets/css/.css">

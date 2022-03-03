@@ -1,4 +1,12 @@
 <?php
+//si different de admin alors on renvoie vers la page connexion
+if($type != "admin"){
+    header("location: index.php?page=connexion");
+}
+?>
+
+
+<?php
 
 require("../../bdd/bddconfig.php");
 
