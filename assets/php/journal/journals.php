@@ -46,7 +46,7 @@
 					?>
 				
                 <div>
-                    <a onclick="return checkdelete()" href="assets/bdd/delete_journal.php?id= <?php echo $journal["idjournal"] ?>">Delete</a>
+                    <a href="assets/bdd/delete_journal.php?id= <?php echo $journal["idjournal"] ?>">Delete</a>
                     <a href="index.php?page=journal/update_post_journal&id=<?php echo $journal["idjournal"] ?>">Update</a>
                 </div>
 				<?php			

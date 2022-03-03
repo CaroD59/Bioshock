@@ -16,15 +16,13 @@ echo !extension_loaded('openssl')?"Not Available":"Available";
 define('GMailUSER', 'testfoadsofip@gmail.com'); // utilisateur Gmail
 define('GMailPWD', 'foadtest'); // Mot de passe Gmail
 
-$to = htmlspecialchars($_POST["email_to"]);
+// $to = htmlspecialchars($_POST["email_to"]);
 $from = htmlspecialchars($_POST["email_from"]);
 $subject= htmlspecialchars($_POST["object"]);
 $body = htmlspecialchars($_POST["body"]);
 
-// var_dump($_FILES["file"]);
 
-
-function smtpMailer($to, $from, $subject, $body) {
+function smtpMailer( $from, $subject, $body) {
 	
 	// on va dans la fonction uploadfichier
 	$piece_jointe = uploadfichier();
@@ -44,7 +42,7 @@ function smtpMailer($to, $from, $subject, $body) {
 	if($piece_jointe != ""){
 		$mail->addAttachment('../upload/'.$piece_jointe);
 	}
-	$mail->AddAddress($to);
+	$mail->AddAddress('testfoadsofip@gmail.com');
 	
 	if(!$mail->Send()) {
 		return 'Mail error: '.$mail->ErrorInfo;

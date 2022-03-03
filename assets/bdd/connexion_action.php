@@ -9,7 +9,7 @@ if($secure_id != $_SESSION["secure_id"]){
     // La variable de session message_app avec le message 
     $_SESSION["message_app"] = "Le formulaire n'est plus valide";
     // on redirige sur la page index.php
-    header("Location: ../index.php?page=inscription");
+    header("Location: ../../index.php?page=inscription");
 
 }
 
@@ -21,17 +21,17 @@ if((time() - $timestamp) > 900 ){
     // La variable de session message_app avec le message 
     $_SESSION["message_app"] = "Le formulaire a expiré ";
     // on redirige sur la page index.php
-    header("Location: ../index.php?page=inscription" );
+    header("Location: ../../index.php?page=inscription" );
 
 }
 // on recup les tentative et on ajoute 1 
 $_SESSION["tentative_app"] = intval($_SESSION["tentative_app"]) + 1 ;
 // si le nombre et > 20 verouille le formulaire
-if($_SESSION["tentative_app"] <= 20){
+if($_SESSION["tentative_app"] >= 20){
     // La variable de session message_app avec le message 
     $_SESSION["message_app"] = "Le formulaire est verrouiller ";
     // on redirige sur la page index.php
-    header("Location: ../index.php?page=inscription" );
+    header("Location: ../../index.php?page=inscription" );
 
 }
 
@@ -87,17 +87,29 @@ try{
                 $_SESSION['tentative_app'] = 0;
     
                 header("Location: ../../index.php");
+               
     
             } else {
+
+                  // La variable de session message_app avec le message 
+                $_SESSION["message_app"] = "L'email ou mdp est incorrect ";
+                // on redirige sur la page inscription
+                header("Location: ../../index.php?page=connexion" );
                 //Mauvais password
-                session_destroy();
-                die('Authentification incorrecte');
+                // session_destroy();
+                // die('Authentification incorrecte');
+                
             }
     
         } else {
+
+                 // La variable de session message_app avec le message 
+                 $_SESSION["message_app"] = "L'email ou mdp est incorrect ";
+                 // on redirige sur la page inscription
+                 header("Location: ../../index.php?page=connexion" );
             //Mauvais login
-            session_destroy();
-            die('Authentification incorrecte');
+            // session_destroy();
+            // die('Authentification incorrecte');
         }
     
     } else {

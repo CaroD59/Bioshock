@@ -1,3 +1,4 @@
+
 <head>
   <link rel="stylesheet" href="assets/css/update-profil-design.css">  
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -6,6 +7,12 @@
 <body>
     
 <main>
+<?php
+           if( $verif_co == 0 ){
+
+            header("Location: index.php?page=connexion");
+           }
+           ?>
 
     
     <!-- BLOC BIENVENUE -->

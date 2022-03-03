@@ -1,7 +1,7 @@
 <?php
 
-
 session_start();
+
 
 //détruire la session courante
 session_destroy();

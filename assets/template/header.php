@@ -25,16 +25,35 @@
       <a href="index.php?page=Envoie_mail" class="linky">Contact</a>
     </div>
     <div  class="lien">
+    <?php
+           if( $verif_co != 0 ){
+            ?>
     <a href="index.php?page=profil_update" class="linky">Modifier mon profil</a>
+    <?php
+    }
+    ?>
     </div>
+    
     <div  class="lien">
+    <?php
+           if( $verif_co == 0 ){
+            ?>
     <a href="index.php?page=connexion" class="linky">Con<span class="flicker-fast">n<span>exion</a> 
+    <?php
+    }
+    ?>
     </div>
-    <!-- <div  class="lien">
-    <a href="index.php?page=inscription" class="linky">Inscription</a>
-    </div> -->
+    
     <div  class="lien">
+       <?php
+           if( $verif_co != 0 ){
+            ?>
     <a href="index.php?page=deconnexion" class="linky"><span class="flicker-slow">Deconnexion</span></a>
+    <?php
+    }
+    ?>
+
+    
     </div>
     </div>  
   </header>
