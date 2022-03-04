@@ -191,6 +191,16 @@ a {
   animation: flicker 1s linear infinite;
 }
 
+.panier-div {
+  padding-top: 100px;
+  text-align: center;
+}
+
+.panier {
+  width: 6em;
+  padding-bottom: 50px;
+}
+
 /* Bouton top  */
 
 .btn-top {

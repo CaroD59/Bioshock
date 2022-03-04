@@ -88,6 +88,14 @@
 
 	</div>
 
+	<!-- PANIER -->
+
+	<div class="panier-div">
+		<a href="index.php?page=panier/panier" target="_blank">
+		<img src="assets/img/Boutique/panier.png" alt="panier" class="panier">
+		</a>
+	</div>
+
 																				<!-- DIV EACH PRODUIT -->
 	<div class="produit">
 		<div class="produits-wrapper" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">

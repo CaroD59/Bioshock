@@ -143,5 +143,13 @@ require('assets/bdd/bddconfig.php');
 	              <input type="submit" value="Mettre à jour" name="update">   
 	              <input type="submit" value="Passer la commande" name="placercommande">
 				</div>  
-	      </form>   
+	      </form> 
+
+<!-- BOUTON RETURN -->
+
+				<div class="return-div">
+            <a href="index.php?page=panier/produits">
+                <img src="assets/img/Site/return.png" alt="return" class="return">            
+            </a>
+      </div>
 	  </div>
