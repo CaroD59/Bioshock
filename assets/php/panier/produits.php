@@ -1,6 +1,6 @@
 <?php 
 	/* Determiner le nombre de produits à afficher sur chaque page*/
-	$nbr_produits_sur_chaque_page = 2;
+	$nbr_produits_sur_chaque_page = 100;
 	/* La page actuelle, apparaîtra dans l'URL  comme index.php?page=produits&p=1 ou p=2 ce signifié la page 1 l& page 2 etc...*/
 	$current_page = isset($_GET['p']) && is_numeric($_GET['p']) ? (int)$_GET['p'] : 1;
 
@@ -24,39 +24,122 @@
 	$total_produits = $objBdd->query('SELECT * FROM produits')->rowCount();
 	?>
 
-	<div class="produits content-wrapper">
-	    <h1>produits</h1>
-		<!-- si admin alors on vera le bouton créer -->
+
+<!-- PAGE -->
+
+<head>
+
+    <link rel="stylesheet" href="assets/css/boutique.css">
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+
+<body>
+	
+	<main>
+
+<!-- BLOC BIENVENUE -->
+
+		<div class="shop">
+        <h1 class="titre-shop">Boutique de Rapture</h1>
+    <div>
+        <img src="assets/img/Site/rapture.png" alt="" class="img__rapture">
+    </div>
+    </div> 
+
+			<div class="bloc-produits">
+
+<!-- SI ADMIN = BOUTON CREER PRODUIT -->
+
 		<?php
 		if($type == "admin"){
 		?>
-			<a href="index.php?page=create_produit" class="post"> Créer un produits</a>
-			
+		<div class="create-for-ryan">
+			<a href="index.php?page=create_produit" class="post">
+			<img src="assets/img/Boutique/plus.png" alt="plus" class="plus">
+				Creer un produit
+			</a>
+		</div>
+
 		<?php
 		}
 		?>
+
+
+	    <p class="produits-dispos">
+				<span class="number-produits"><?=$total_produits?></span> produits disponibles actuellement à la boutique
+			</p>
+
+<!-- PRESENTATION -->
+
+	<div class="presentation" data-aos="flip-up">
+
+			<img src="assets/img/Site/lighthouse-rapture.png" alt="lighthouse" class="imgs-description">
+
+			<p class="titre-description">
+				Bienvenue à la boutique de <span class="span-ryan">Rapture</span> !
+			</p>
+			<p class="text-description">
+				Vous y trouverez une multitude d'objets qui feront votre bonheur. Plasmide, <span class="span-ryan">Adam</span>, Eve, et bien d'autres encore... en coopération avec la ville de Columbia, nous avons également reçu une petite réserve de <span class="span-ryan">toniques importés de la ville de dessus</span>. N'hésitez donc pas à venir nous dévaliser !
+			</p>
 		
-	    <p><?=$total_produits?> produits</p>
-	    <div class="produits-wrapper"><table><tr>
+			<img src="assets/img/Boutique/columbia.png" alt="columbia" class="columbia">
+
+	</div>
+
+																				<!-- DIV EACH PRODUIT -->
+	<div class="produit">
+		<div class="produits-wrapper" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+
+<!-- NOM DU PRODUIT AVEC LIEN-->
+
 	        <?php foreach ($produits as $produit): ?>
-	        <td><a href="index.php?page=panier/produit&id=<?=$produit['id']?>" class="produit"> <img src="assets/upload/<?=$produit['img']?>" width="200" height="200" alt="<?=$produit['nom']?>"><br>
-	            <span class="nom"><?=$produit['nom']?></span><br>
-	            <span class="price">
-	                &euro;<?=$produit['prix']?>
-	                <?php if ($produit['prix_Reel'] > 0): ?>  
-	               <span class="prix_Reel">&euro;<?=$produit['prix_Reel']?></span>
-	                <?php endif; ?>
-	            </span>
-	        </a></td>
-	        <?php endforeach; ?>
-	               </tr></table>
-	    </div>
+						<div class="name-bloc">
+						<a href="index.php?page=panier/produit&id=<?=$produit['id']?>" class="produit">
+						<div>
+							<img src="assets/upload/<?=$produit['img']?>" alt="<?=$produit['nom']?>" class="img-produit">							
+						</div>
+						<div>
+							<span class="nom"><?=$produit['nom']?></span>							
+						</div>
+	      	  </a>								
+						</div>
+	       		<?php endforeach; ?>		
+
+		</div>
+	</div>
+
+<!-- PREVIOUS NEXT BUTTONS -->
+
 	    <div class="buttons">
 	        <?php if ($current_page > 1): ?>
-	        <a href="index.php?page=panier/produits&p=<?=$current_page-1?>"><i class="fas fa-angle-double-left"> </i> Prev</a>
+	        <a href="index.php?page=panier/produits&p=<?=$current_page-1?>"><i class="fas fa-angle-double-left"> </i>Prev</a>
 	        <?php endif; ?>
 	        <?php if ($total_produits > ($current_page * $nbr_produits_sur_chaque_page) - $nbr_produits_sur_chaque_page + count($produits)): ?>
-	        <a href="index.php?page=panier/produits&p=<?=$current_page+1?>">Next <i class="fas fa-angle-double-right"> </i></a>
+	        <a href="index.php?page=panier/produits&p=<?=$current_page+1?>">Next<i class="fas fa-angle-double-right"> </i></a>
 	        <?php endif; ?>
 	    </div>
-	</div>
+
+			</div>
+
+<!-- BLOC TOP BUTTON  -->
+
+<div class="btn-top">
+            <img src="assets/img/Site/submarine.png" alt="sub" id="submarine-btn">
+        </div>
+
+	</main>
+
+</body>
+
+<script src="assets/js/btn-top.js"></script>
+<script src="assets/js/home-play-audio.js"></script>
+
+<!-- AOS JS ANIMATION  -->
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+
