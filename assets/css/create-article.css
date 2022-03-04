@@ -15,8 +15,8 @@ main {
 
 /* Bienvenue  */
 
-.journal {
-  background-image: url('/Bioshock/assets/img/Journal/create-journal.jpg');
+.article {
+  background-image: url('/Bioshock/assets/img/Journal/sister.jpg');
   background-color: black;
   height: auto;
   background-position: center;
@@ -25,7 +25,7 @@ main {
   border-bottom: 3px solid #8c783e;
 }
 
-.titre-journal {
+.titre-article {
   padding-top: 50px;
   font-family: 'Andes';
   font-size: 3em;
@@ -80,6 +80,8 @@ main {
   border-radius: 40px;
 }
 
+/* Form */
+
 .form {
   margin-top: 50px;
   display: block;
@@ -95,7 +97,7 @@ main {
   margin-bottom: 50px;
 }
 
-#titre {
+.titre {
   background: #132b30;
   color: #a3a3a3;
   text-align: center;
@@ -109,6 +111,19 @@ main {
   margin: 10px;
   font-size: 1em;
   border-bottom: 3px solid #8c783e;
+}
+
+#resume {
+  margin-top: 50px;
+  padding: 20px;
+  background: #132b30;
+  color: #a3a3a3;
+  resize: none;
+  border: 3px solid #8c783e;
+  border-radius: 10px;
+  width: 600px;
+  height: 300px;
+  font-family: 'Californian FB';
 }
 
 .inpFile {
@@ -126,7 +141,7 @@ main {
   font-size: 0.5em;
 }
 
-#titre::placeholder {
+.titre::placeholder {
   font-family: 'Californian FB';
   color: #a3a3a3;
   opacity: 0.33;
@@ -201,7 +216,7 @@ main {
 }
 
 @media screen and (max-width: 750px) {
-  #titre {
+  .titre {
     padding-top: 10px;
     padding-left: 40px;
     padding-right: 40px;
@@ -220,6 +235,11 @@ main {
     margin: 10px;
     font-size: 0.5em;
   }
+
+  #resume {
+    width: 300px;
+    height: 200px;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -233,7 +253,7 @@ main {
     width: 200px;
   }
 
-  .titre-journal {
+  .titre-article {
     font-size: 2.5em;
   }
 }
@@ -254,6 +274,11 @@ main {
   .inpFile {
     font-size: 0.3em;
   }
+
+  #resume {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -266,9 +291,13 @@ main {
 @media screen and (max-width: 300px) {
   .inpFile {
     font-size: 0.2em;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
   }
 
-  #titre {
+  .titre {
     padding-top: 10px;
     padding-left: 30px;
     padding-right: 30px;
@@ -276,5 +305,10 @@ main {
     margin-bottom: 50px;
     margin: 10px;
     font-size: 0.3em;
+  }
+
+  #resume {
+    width: 150px;
+    height: 200px;
   }
 }

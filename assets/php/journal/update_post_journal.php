@@ -7,23 +7,32 @@ if($type != "admin"){
 
 
 <head>
-
-<link rel="stylesheet" href="assets/css/.css">
-
+    <link rel="stylesheet" href="assets/css/update-journal.css">
 </head>
 
-     
-      <main id="main">
-      <h1>Modifier mon Journal</h1>
+    <body>
 
-        <form name="formulaire" method="POST" action="assets/php/journal/update_journal.php">
+       <main id="main">
 
+        <!-- BLOC BIENVENUE -->
 
-        <input type="text" name="titre" id="titre" required />
+        <div class="update">
+            <h1 class="titre-update">Modifier un journal</h1>
+        <div>
+            <img src="assets/img/Site/rapture.png" alt="" class="img__rapture">
+        </div>
+        </div>  
 
+        <!-- BLOC FORM -->
+
+            <form name="formulaire" method="POST" action="assets/php/journal/update_journal.php">
+
+            <input type="text" name="titre" id="titre" placeholder="Modifier votre titre ici" required />
             <input type="submit" value="Envoyer" class="envoyer" required>
             <input type="hidden" name="idjournal" value="<?php echo $_GET["id"]?>">
 
+            </form>
+        </main>   
 
-        </form>
-        </main>
+    </body>
+
