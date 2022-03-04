@@ -18,6 +18,8 @@ if( $verif_co != 0){
 
 <main>
 
+
+
 <!-- BLOC BIENVENUE -->
 
 <div class="connexion">
@@ -44,10 +46,19 @@ if( $verif_co != 0){
         <audio src="assets/sons/ocean.mp3" id="audio"></audio>
     </div>
     </div>
+  
+    
 
     <form method="POST" action="assets/bdd/connexion_action.php" data-aos="zoom-in">
+   
 
     <img src="assets/img/Site/lighthouse-rapture.png" alt="lighthouse" class="imgs-description">
+    <?php
+    if (!empty($_SESSION['message_app'])) {
+        echo '<p class="message_app"> '.$_SESSION['message_app'].'</p>';
+        unset($_SESSION['message_app']);
+    }
+    ?>
 
         <div class="content-form">
             <div class="div-input">

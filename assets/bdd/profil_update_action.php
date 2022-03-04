@@ -3,6 +3,8 @@
 session_start();
 
 
+
+
 $secure_id = $_POST["token"];
 // on verifie le token de session avec celui du formulaire pour la validation
 if($secure_id != $_SESSION["secure_id"]){

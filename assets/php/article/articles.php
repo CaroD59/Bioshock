@@ -57,7 +57,7 @@
 				if($type == "admin"){
 					?>			
                 <div>
-                    <a onclick="return checkdelete()" href="assets/bdd/delete_article.php?id= <?php echo $article["idarticle"] ?>">Delete</a>
+                    <a href="assets/bdd/delete_article.php?id= <?php echo $article["idarticle"] ?>">Delete</a>
                     <a href="index.php?page=article/update_post_article&id=<?php echo $article["idarticle"] ?>">Update</a>
                 </div>
 				<?php

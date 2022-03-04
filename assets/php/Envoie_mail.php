@@ -29,14 +29,6 @@
 
 	<img src="assets/img/Site/lighthouse-rapture.png" alt="lighthouse" class="imgs-description">
 
-	<div class="mb-3">
-	<div class="div-input">
-		<label for="email_to" class="form-label">Email d'Andrew Ryan</label>
-	</div>
-	<div class="div-input">
-		<input type="email" class="form-control" name="email_to" id="email_to" placeholder="name@example.com" maxlength="255" minlength="3">
-	</div>
-	</div>
 
 	<div class="mb-3">
 	<div class="div-input">
