@@ -1,10 +1,13 @@
 
 <?php
+
+session_start();
+
 //si different de admin alors on renvoie vers la page connexion
-if($type != "admin"){
+if($_SESSION['logged_in']['type']  != "admin"){
     header("Location: ../../index.php?page=connexion");
 }else{
-  $idjournal = htmlspecialchars ($_GET["id"]);
+  $idjournal = htmlspecialchars($_GET["id"]);
 
   require("bddconfig.php");
 
@@ -13,6 +16,8 @@ if($type != "admin"){
       $objBdd = new PDO("mysql:host=$bddserver;dbname=$bddname;charset=utf8", $bddlogin, $bddpass);
       // En cas de probléme renvoie dans le catch avec l'erreeur
       $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+      die(var_dump($objBdd));
 
       $recup = $objBdd->query("DELETE FROM `journal` WHERE `idjournal` = $idjournal");
 
