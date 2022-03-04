@@ -54,4 +54,6 @@ if($type != "admin"){
 
 </body>
 
+<!-- SCRIPT POUR UPLOAD IMG -->
+
 <script src="assets/js/img-input-file.js"></script>
