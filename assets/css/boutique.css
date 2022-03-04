@@ -75,10 +75,6 @@ main {
   margin-bottom: 30px;
 }
 
-.post {
-  animation: flicker 3s linear infinite;
-}
-
 .post:hover {
   color: white;
   transition: 0.5s;
@@ -135,7 +131,6 @@ a {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 50px;
-  animation: flicker 1s linear infinite;
 }
 
 /* Produits Bloc */
@@ -185,6 +180,15 @@ a {
   box-shadow: 0px 0px 5px #fff, 0px 0px 10px #fff, 0px 0px 15px #fff,
     0px 0px 20px #fff, 0px 0px 30px #fff, 0px 0px 40px #fff, 0px 0px 55px #fff,
     0px 0px 75px #fff;
+}
+
+.jardin {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20em;
+  padding-bottom: 30px;
+  animation: flicker 1s linear infinite;
 }
 
 /* Bouton top  */
@@ -272,6 +276,10 @@ a {
 @media screen and (max-width: 450px) {
   .columbia {
     width: 15em;
+  }
+
+  .jardin {
+    width: 10em;
   }
 }
 

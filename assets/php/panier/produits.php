@@ -41,13 +41,13 @@
 <!-- BLOC BIENVENUE -->
 
 		<div class="shop">
-        <h1 class="titre-shop">Boutique de Rapture</h1>
+        <h1 class="titre-shop">Au Jardin des Glaneuses</h1>
     <div>
         <img src="assets/img/Site/rapture.png" alt="" class="img__rapture">
     </div>
     </div> 
 
-			<div class="bloc-produits">
+		<div class="bloc-produits">
 
 <!-- SI ADMIN = BOUTON CREER PRODUIT -->
 
@@ -75,9 +75,10 @@
 	<div class="presentation" data-aos="flip-up">
 
 			<img src="assets/img/Site/lighthouse-rapture.png" alt="lighthouse" class="imgs-description">
+			<img src="assets/img/Boutique/jardin.png" alt="jardin" class="jardin">
 
 			<p class="titre-description">
-				Bienvenue à la boutique de <span class="span-ryan">Rapture</span> !
+				Bienvenue à la boutique de <span class="span-ryan">Rapture</span>, le Jardin des Glaneuse !
 			</p>
 			<p class="text-description">
 				Vous y trouverez une multitude d'objets qui feront votre bonheur. Plasmide, <span class="span-ryan">Adam</span>, Eve, et bien d'autres encore... en coopération avec la ville de Columbia, nous avons également reçu une petite réserve de <span class="span-ryan">toniques importés de la ville de dessus</span>. N'hésitez donc pas à venir nous dévaliser !

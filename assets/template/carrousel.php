@@ -30,7 +30,7 @@
       <img src="assets/img/Carrousel/rapture3.jpg" class="d-block w-100" alt="img-carrousel">
       <div class="carousel-caption d-none d-md-block">
         <h5 class="titre-img-carousel">Visitez notre boutique !</h5>
-        <p class="p-img-carousel">Plasmids ? Adam ? Eve ? Et bien d'autres ! N'hésitez pas à vous rendre à la <span class="carousel-blink">Farandole des Prix</span> <a href="index.php?page=panier/produits" target="_blank" class="link-carousel">ici</a> !</p>
+        <p class="p-img-carousel">Plasmids ? Adam ? Eve ? Et bien d'autres ! N'hésitez pas à vous rendre au <span class="carousel-blink">Jardin des Glaneuses</span> <a href="index.php?page=panier/produits" target="_blank" class="link-carousel">ici</a> !</p>
       </div>
     </div>
   </div>
