@@ -17,8 +17,6 @@ if($_SESSION['logged_in']['type']  != "admin"){
       // En cas de probléme renvoie dans le catch avec l'erreeur
       $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-      die(var_dump($objBdd));
-
       $recup = $objBdd->query("DELETE FROM `journal` WHERE `idjournal` = $idjournal");
 
     

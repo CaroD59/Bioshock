@@ -1,9 +1,4 @@
 @font-face {
-  font-family: 'Coast';
-  src: url('../fonts/Coast.ttf');
-}
-
-@font-face {
   font-family: 'Andes';
   src: url('../fonts/Andes.ttf');
 }
@@ -12,22 +7,22 @@ body {
   height: auto;
   background-color: black;
   color: #a3a3a3;
-  text-align: center;
 }
 
 /* Bienvenue  */
 
-.connexion {
-  background-image: url('/Bioshock/assets/img/Site/connexion.jpg');
+.panier {
+  background-image: url('/Bioshock/assets/img/Boutique/monsieurp.jpg');
   background-color: black;
   height: auto;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   border-bottom: 3px solid #8c783e;
+  margin-bottom: 100px;
 }
 
-.titre-connexion {
+.titre-panier {
   padding-top: 50px;
   font-family: 'Andes';
   font-size: 3em;
@@ -46,56 +41,43 @@ body {
   padding-bottom: 50px;
 }
 
-.sister {
-  display: none;
-}
+/* Page */
 
-.sister-view {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  animation: flicker 1s linear infinite;
-}
-
-/* Audio */
-
-.img-record {
-  margin-top: 50px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
-.audios {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.audio-png {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100px;
-}
-
-.play-me {
-  padding-top: 10px;
+.quantite {
+  background-color: #132b30;
+  border: 1px solid #8c783e;
+  padding: 10px;
   text-align: center;
-  font-family: 'Coast';
-  font-size: 30px;
+  color: #a3a3a3;
+  border-radius: 10px;
+  font-weight: bold;
 }
 
-.play-audio {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 30px;
-  cursor: pointer;
+.subtotal {
+  text-align: center;
+  color: #8c783e;
+  font-family: 'Andes';
+  letter-spacing: 0.2em;
+  font-size: 2em;
+  padding-top: 50px;
 }
 
-/* Form  */
+.prix-sub {
+  animation: flicker 1s linear infinite;
+  font-weight: bold;
+  text-shadow: 0px 0px 5px #fff, 0px 0px 10px #fff, 0px 0px 15px #fff,
+    0px 0px 20px #fff, 0px 0px 30px #fff, 0px 0px 40px #fff, 0px 0px 55px #fff,
+    0px 0px 75px #fff;
+}
+
+form {
+  width: 70%;
+  background-color: #132b30;
+  border: 3px solid #8c783e;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 30px;
+}
 
 .imgs-description {
   width: 6em;
@@ -106,60 +88,76 @@ body {
   animation: flicker 3s linear infinite;
 }
 
-form {
-  margin-top: 50px;
+.product {
+  border: 3px solid #8c783e;
+  border-radius: 20px;
+  text-align: center;
+  padding: 20px;
+  width: 50%;
+  margin-bottom: 30px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  font-family: 'Californian FB';
-  border-radius: 20px;
-  background-color: #132b30;
-  border: 3px solid #8c783e;
-  padding: 50px;
-  width: 70%;
-  font-size: 1.5em;
-  margin-bottom: 50px;
 }
 
-.div-input {
-  padding-bottom: 20px;
-}
-
-.content-form {
-  text-align: center;
-}
-
-.input-connexion {
-  background: #132b30;
-  color: #a3a3a3;
-  text-align: center;
-  font-family: 'Californian FB';
-  border: none;
-  outline: none;
+.img-panier {
   padding-top: 20px;
-  padding-left: 70px;
-  padding-right: 70px;
   padding-bottom: 20px;
-  margin: 10px;
-  font-size: 1em;
-  border-bottom: 3px solid #8c783e;
 }
 
-.input-connexion::placeholder {
-  font-family: 'Californian FB';
-  color: #a3a3a3;
-  opacity: 0.33;
+.img {
+  width: 4em;
 }
 
-.input-form {
+.name {
+  padding-top: 10px;
   font-family: 'Andes';
-  font-size: 1em;
-  letter-spacing: 0.3em;
+  color: #8c783e;
+  font-size: 2em;
+  letter-spacing: 0.2em;
+}
+
+a {
+  text-decoration: none;
   color: #8c783e;
 }
 
-.star-required {
-  color: red;
+.prix-produit {
+  padding: 20px;
+  font-style: italic;
+}
+
+.quantite-prix {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.div-prix-sub {
+  padding-top: 50px;
+}
+
+.prix-produit-total {
+  font-weight: bold;
+  color: #8c783e;
+  font-size: 2em;
+}
+
+.panier-vide {
+  text-align: center;
+  color: #a3a3a3;
+  font-size: 2em;
+  font-family: 'Andes';
+  letter-spacing: 0.2em;
+}
+
+/* BOUTONS  */
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
 }
 
 .btn-submit {
@@ -191,25 +189,22 @@ form {
     0px 0px 75px #fff;
 }
 
-.container-href {
-  text-align: center;
+.delete {
+  width: 3em;
 }
 
-.redirection {
+/* Return Button */
+
+.return-div {
+  padding-top: 50px;
+}
+
+.return {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 2em;
   padding-bottom: 50px;
-  font-family: 'Andes';
-  color: rgb(202, 197, 197);
-  text-decoration: none;
-  font-size: 1em;
-  text-shadow: 0px 0px 5px #8c783e, 0px 0px 10px #8c783e, 0px 0px 15px #8c783e,
-    0px 0px 20px #8c783e, 0px 0px 30px #8c783e, 0px 0px 40px #8c783e,
-    0px 0px 55px #8c783e, 0px 0px 75px #8c783e;
-  animation: flicker 3s linear infinite;
-}
-
-.redirection:hover {
-  color: black;
-  transition: 0.2s;
 }
 
 /* Bouton top  */
@@ -268,15 +263,13 @@ form {
   }
 }
 
-/* RESPONSIVE */
-
 @media screen and (max-width: 855px) {
-  form {
-    width: 100%;
-  }
-
   .btn-submit:hover {
     box-shadow: none;
+  }
+
+  form {
+    width: 100%;
   }
 
   .btn-top {
@@ -284,9 +277,12 @@ form {
   }
 }
 
-@media screen and (max-width: 600px) {
-  .sister {
-    width: 50%;
+@media screen and (max-width: 630px) {
+  .buttons {
+    flex-direction: column;
+  }
+  .product {
+    width: 100%;
   }
 }
 
@@ -295,18 +291,8 @@ form {
     width: 200px;
   }
 
-  .titre-connexion {
+  .titre-panier {
     font-size: 2.5em;
-  }
-
-  .input-connexion {
-    padding-top: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-bottom: 10px;
-    margin-bottom: 50px;
-    margin: 10px;
-    font-size: 0.5em;
   }
 }
 
@@ -321,5 +307,21 @@ form {
     color: #a3a3a3;
     font-size: 1em;
     letter-spacing: normal;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .name {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .quantite-prix {
+    flex-direction: column;
+  }
+
+  .prix-produit-total {
+    padding-top: 30px;
   }
 }

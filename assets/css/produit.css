@@ -1,0 +1,252 @@
+@font-face {
+  font-family: 'Andes';
+  src: url('../fonts/Andes.ttf');
+}
+
+body {
+  height: auto;
+  background-color: black;
+  color: #a3a3a3;
+  font-family: 'Californian FB';
+}
+
+main {
+  text-align: center;
+}
+
+/* Bienvenue  */
+
+.shop {
+  background-image: url('/Bioshock/assets/img/Boutique/boutique.jpg');
+  background-color: black;
+  height: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: 3px solid #8c783e;
+  margin-bottom: 30px;
+}
+
+.titre-shop {
+  padding-top: 50px;
+  font-family: 'Andes';
+  font-size: 3em;
+  letter-spacing: 0.3em;
+  text-align: center;
+  color: #8c783e;
+  font-weight: normal;
+}
+
+.img__rapture {
+  padding-top: 20px;
+  width: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 50px;
+}
+
+/* Page */
+
+.produit {
+  width: 70%;
+  background-color: #132b30;
+  border: 3px solid #8c783e;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.name {
+  color: #8c783e;
+  font-size: 3em;
+  padding-bottom: 10px;
+}
+
+.img-produit {
+  width: 6em;
+  margin: 50px;
+}
+
+.product {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.description-bloc {
+  width: 50%;
+}
+
+.text-description {
+  font-size: 1.5em;
+  text-align: justify;
+}
+
+.prix-bloc {
+  width: 50%;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+form {
+  padding-top: 20px;
+}
+
+.quantite {
+  background-color: #132b30;
+  border: 1px solid #8c783e;
+  padding: 10px;
+  text-align: center;
+  color: #a3a3a3;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.btn-submit {
+  margin-top: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  background: #8c783e;
+  padding-top: 20px;
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+  font-family: 'Andes';
+  color: #a3a3a3;
+  font-size: 1em;
+  letter-spacing: 0.2em;
+}
+
+.btn-submit:hover {
+  color: white;
+  transition: 0.5s;
+  box-shadow: 0px 0px 5px #fff, 0px 0px 10px #fff, 0px 0px 15px #fff,
+    0px 0px 20px #fff, 0px 0px 30px #fff, 0px 0px 40px #fff, 0px 0px 55px #fff,
+    0px 0px 75px #fff;
+}
+
+.jardin {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20em;
+  padding-bottom: 50px;
+  animation: flicker 1s linear infinite;
+}
+
+/* Return Button */
+
+.return-div {
+  padding-top: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.return {
+  width: 2em;
+  padding-bottom: 50px;
+}
+
+/* Flicker Animation  */
+
+@keyframes flicker {
+  0%,
+  19.999%,
+  22%,
+  62.999%,
+  64%,
+  64.999%,
+  70%,
+  100% {
+    opacity: 0.99;
+  }
+  20%,
+  21.999%,
+  63%,
+  63.999%,
+  65%,
+  69.999% {
+    opacity: 0.4;
+  }
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 1200px) {
+  .produit {
+    width: 100%;
+  }
+
+  .product {
+    flex-direction: column;
+  }
+  .description-bloc,
+  .prix-bloc {
+    width: 100%;
+  }
+
+  .description-bloc {
+    padding-bottom: 30px;
+  }
+
+  .prix-bloc {
+    border-top: 3px solid #8c783e;
+    padding-top: 50px;
+  }
+
+  .btn-submit:hover {
+    box-shadow: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .img__rapture {
+    width: 200px;
+  }
+
+  .titre-shop {
+    font-size: 2.5em;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .jardin {
+    width: 10em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .btn-submit {
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    margin-bottom: 50px;
+    font-family: 'Andes';
+    color: #a3a3a3;
+    font-size: 1em;
+    letter-spacing: normal;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .btn-submit {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 0.8em;
+  }
+
+  .name {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+}
