@@ -104,7 +104,7 @@ try{
         } else {
 
                  // La variable de session message_app avec le message 
-                 $_SESSION["message_app"] = "L'email ou mdp est incorrect ";
+                 $_SESSION["message_app"] = "Email ou mot de passe incorrect...";
                  // on redirige sur la page inscription
                  header("Location: ../../index.php?page=connexion" );
             //Mauvais login

@@ -165,6 +165,9 @@
         <div class="imgs-enseignes">
         <img src="assets/img/Site/Enseignes/fleet.png" alt="" class="enseigne">
         </div>
+        <div class="imgs-enseignes">
+        <img src="assets/img/Boutique/jardin-logo.png" alt="" class="enseigne-flick1">
+        </div>
     </div>
 </div>
 

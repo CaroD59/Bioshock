@@ -58,7 +58,7 @@ if($type != "admin"){
         </div>
 
         <div>
-        <textarea name="description" id="description" class="titre" required placeholder="Écrivez une description" maxlength="200"></textarea>
+        <textarea name="description" id="description" class="titre" required placeholder="Écrivez une description" maxlength="2000"></textarea>
         </div>
 
         <div>
@@ -68,6 +68,12 @@ if($type != "admin"){
  
             
         </form>
+
+        <div class="return-div">
+            <a href="index.php?page=panier/produits">
+                <img src="assets/img/Site/return.png" alt="return" class="return">            
+            </a>
+        </div>
 
     </main>  
 

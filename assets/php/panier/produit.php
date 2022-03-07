@@ -25,20 +25,72 @@ require('assets/bdd/bddconfig.php');
 	 }
 	 ?>
 
-	<div class="produit content-wrapper">
-	    <img src="assets/upload/<?=$produit['img']?>" width="500" height="500" alt="<?=$produit['nom']?>">
-	    <div>
-	        <h1 class="name"><?=$produit['nom']?></h1>
-	        <span class="price"> &euro;<?=$produit['prix']?>
+	<head>
+
+				<link rel="stylesheet" href="assets/css/produit.css">
+				<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+	</head>
+
+<body>
+
+		<main>
+
+<!-- BLOC BIENVENUE -->
+
+<div class="shop">
+		<h1 class="titre-shop">Au Jardin des Glaneuses</h1>
+<div>
+		<img src="assets/img/Site/rapture.png" alt="" class="img__rapture">
+</div>
+</div> 
+
+<!-- BLOC PAGE -->
+
+<img src="assets/img/Boutique/jardin-logo.png" alt="jardin" class="jardin">
+
+
+			<div class="produit">
+	    			<img src="assets/upload/<?=$produit['img']?>" alt="<?=$produit['nom']?>" class="img-produit">
+
+	    	<div class="product">
+
+	 				<div class="description-bloc">
+	        	<h1 class="name"><?=$produit['nom']?></h1>
+						<p class="text-description">
+	          <?=$produit['description']?>									
+						</p>
+							 
+					 </div>
+
+	 				<div class="prix-bloc">
+	        	<span class="price"> &euro;<?=$produit['prix']?> au lieu de 
 	              <?php if ($produit['prix_Reel'] > 0): ?>
 	             <span class="prix_Reel"> &euro;<?=$produit['prix_Reel']?></span>
 	             <?php endif; ?>
 	         </span>
 	         <form action="index.php?page=panier/panier" method="post">
-	             <input type="number" name="quantite" value="1" min="1" max="<?=$produit['quantite']?>" placeholder="Quantite" required>
-	             <input type="hidden" name="produit_id" value="<?=$produit['id']?>"> <input type="submit" value="Ajouter au panier">
-	         </form>
-	         <div class="description">
-	             <?=$produit['description']?>
-	         </div>
-	     </div></div>
+						 	<div>
+	            	<input type="number" name="quantite" class="quantite" value="1" min="1" max="<?=$produit['quantite']?>" placeholder="Quantité" required>							 
+						 	</div>
+							<div>
+	             <input type="hidden" name="produit_id" value="<?=$produit['id']?>"> <input type="submit" value="Ajouter au panier"  class="btn-submit">								
+							</div>
+	         </form>						 
+					 </div>
+
+	      </div>
+
+			</div>
+
+<!-- BOUTON RETURN -->
+
+			 <div class="return-div">
+            <a href="index.php?page=panier/produits">
+                <img src="assets/img/Site/return.png" alt="return" class="return">            
+            </a>
+      </div>
+
+		</main>
+
+</body>
