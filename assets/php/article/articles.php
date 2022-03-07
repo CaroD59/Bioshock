@@ -36,6 +36,7 @@
 
 	<head>
 		<link rel="stylesheet" href="assets/css/article.css">
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	</head>
 
 	<body>
@@ -60,7 +61,7 @@
 		}
 		?>	    
 
-	    <div class="Bloc-Articles">
+	    <div class="Bloc-Articles" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
 				<h1 class="titre-journal">Rapture Tribune</h1>
 	        <?php foreach ($articles as $article): ?>
 					<div class="article-section">
@@ -122,5 +123,12 @@
 			</main>
 
 	</body>
+
+	<!-- AOS JS ANIMATION  -->
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 
 
