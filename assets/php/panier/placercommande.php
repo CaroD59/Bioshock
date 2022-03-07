@@ -41,6 +41,7 @@
 	  <p class="commande">Votre commande est prise en considération avec succès.</p>   
 	  <p class="commande">Merci de faire vos achats au <span id="co_prenom">Jardin des Glaneuses</span> ! </p>   
 	  <p class="commande">Nous vous contacterons par e-mail avec les détails de votre commande.</p>
+		<p class="commande"><span id="co_prenom">Je vous pris</span> de passer une agréable journée.</p>
 		<p class="ryan">- Andrew Ryan</p>
 	</div>
 

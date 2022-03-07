@@ -1,7 +1,7 @@
 
 <?php
 	/* Determiner le nombre de produits à afficher sur chaque page*/
-	$nbr_articles_sur_chaque_page = 10;
+	$nbr_articles_sur_chaque_page = 100;
 	/* La page actuelle, apparaîtra dans l'URL  comme index.php?page=journal&p=1 ou p=2 ce signifié la page 1 l& page 2 etc...*/
 	$current_page = isset($_GET['p']) && is_numeric($_GET['p']) ? (int)$_GET['p'] : 1;
 	
@@ -34,39 +34,73 @@
 
 	?>
 
-	<div class="articles content-wrapper">
-	    <h1>Articles</h1>
-		<!-- si admin on voit le bouton créer -->
+	<head>
+		<link rel="stylesheet" href="assets/css/article.css">
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	</head>
+
+	<body>
+		
+			<main>
+
+	<div class="articles">
+
+<!-- SI ADMIN = BOUTON CREER ARTICLE -->
 		<?php
 		if($type == "admin"){
 		?>
-			<a href="index.php?page=article/create_article&idjournal=<?php echo $_GET['idjournal'] ?>" class="post"> Créer un article</a>
-			
+		<div class="create-for-ryan">
+			<a href="index.php?page=article/create_article&idjournal=<?php echo $_GET['idjournal'] ?>" class="post">
+			<img src="assets/img/Boutique/plus.png" alt="plus" class="plus">
+				Creer un article</a>
+		</div>
+		<p class="produits-dispos">
+		<span class="number-produits"><?=$total_articles?></span> article(s) disponible(s) pour ce journal
+			</p>			
 		<?php
 		}
 		?>	    
-		<p><?=$total_articles?> article</p>
-	    <div class="articles-wrapper"><table><tr>
+
+	    <div class="Bloc-Articles" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+				<h1 class="titre-journal">Rapture Tribune</h1>
 	        <?php foreach ($articles as $article): ?>
-	        <td><a href="index.php?page=article/articles&idarticle=<?=$article['idarticle']?>" class="articles"> <a href="index.php?page=journal/journals&idarticle=<?= $article['idarticle'] ?>"><img src="assets/upload/<?=$article['img']?>" width="200" height="200" alt="<?=$article['titre']?>"></a><br>
-          
-	            <span class="titre"><?=$article['titre']?></span><br>
-	            <span class="resume"><?=$article['resume']?></span><br>
-				<!-- si admin on voit les boutton update et delete -->
-				<?php
-				if($type == "admin"){
+					<div class="article-section">
+						<div class="imgs-articles">
+						<!-- IMAGE DE L'ARTICLE -->
+							<a href="index.php?page=article/articles&idarticle=<?=$article['idarticle']?>" class="articles"> <a href="index.php?page=journal/journals&idarticle=<?= $article['idarticle'] ?>">
+								<img src="assets/upload/<?=$article['img']?>" alt="<?=$article['titre']?>" class="image-article">
+							</a>
+						</div>
+						<div class="descriptions">
+							<div class="titre">
+						<!-- TITRE DE L'ARTICLE  -->
+	            <span><?=$article['titre']?></span>
+							</div>
+							<div class="resume">
+						<!-- RESUME DE L'ARTICLE -->
+	            <span><?=$article['resume']?></span>								
+							</div>
+						</div>
+					</div>
+
+
+<!-- SI ADMIN BOUTONS SUPPRIMER ET MODIFIER  -->
+					<?php
+					if($type == "admin"){
 					?>			
-                <div>
-                    <a href="assets/bdd/delete_article.php?id=<?php echo $article["idarticle"] ?>">Delete</a>
-                    <a href="index.php?page=article/update_post_article&id=<?php echo $article["idarticle"] ?>">Update</a>
+                <div class="btns-gestion">
+                    <a href="assets/bdd/delete_article.php?id=<?php echo $article["idarticle"] ?>"><img src="assets/img/Journal/delete2.png" alt="" class="btns"></a>
+                    <a href="index.php?page=article/update_post_article&id=<?php echo $article["idarticle"] ?>"><img src="assets/img/Journal/edit2.png" alt="" class="btns"></a>
                 </div>
-				<?php
+					<?php
 			}
 			?>
-	        </a></td>
+	        					</a>
 	        <?php endforeach; ?>
-	               </tr></table>
+
 	    </div>
+
+			<!-- BOUTONS NEXT / PREVIOUS  -->
 	    <div class="buttons">
 	        <?php if ($current_page > 1): ?>
 	        <a href="index.php?page=article/article&p=<?=$current_page-1?>"><i class="fas fa-angle-double-left"> </i> Prev</a>
@@ -75,4 +109,26 @@
 	        <a href="index.php?page=article/articles&p=<?=$current_page+1?>">Next <i class="fas fa-angle-double-right"> </i></a>
 	        <?php endif; ?>
 	    </div>
+
 	</div>
+
+	<!-- BOUTON RETURN -->
+
+	<div class="return-div">
+            <a href="index.php?page=journal/journals">
+                <img src="assets/img/Site/return.png" alt="return" class="return">            
+            </a>
+      </div>
+
+			</main>
+
+	</body>
+
+	<!-- AOS JS ANIMATION  -->
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+
