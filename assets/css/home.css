@@ -401,4 +401,10 @@ h2 {
   .typewriter {
     display: none;
   }
+  .img-map {
+    width: 200px;
+  }
+  .ryan-img {
+    width: 200px;
+  }
 }

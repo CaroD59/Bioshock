@@ -61,14 +61,12 @@
 			</a>
 		</div>
 
-		<?php
-		}
-		?>
-
-
 	    <p class="produits-dispos">
 				<span class="number-produits"><?=$total_produits?></span> produits disponibles actuellement à la boutique
 			</p>
+		<?php
+		}
+		?>
 
 <!-- PRESENTATION -->
 
@@ -76,6 +74,12 @@
 
 			<img src="assets/img/Site/lighthouse-rapture.png" alt="lighthouse" class="imgs-description">
 			<img src="assets/img/Boutique/jardin.png" alt="jardin" class="jardin">
+
+			<div class="audios">
+        <img src="assets/img/Site/play.png" alt="" class="play-audio" id="play-audio">
+        <img src="assets/img/Site/pause.png" alt="" class="play-audio" id="pause-audio">
+        <audio src="assets/sons/jardin.mp3" id="audio"></audio>
+    </div>
 
 			<p class="titre-description">
 				Bienvenue à la boutique de <span class="span-ryan">Rapture</span>, le Jardin des Glaneuse !

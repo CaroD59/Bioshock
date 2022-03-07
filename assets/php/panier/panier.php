@@ -97,53 +97,88 @@ require('assets/bdd/bddconfig.php');
 	 }  
 	 ?>
 
+	 <head>
+		 <link rel="stylesheet" href="assets/css/panier.css">
+		 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	 </head>
 
+<body>
+		 
+	 	<main>
 
-	   <div class="panier content-wrapper">   
-	       <h1>Panier d'achat</h1>   
-	       <form action="index.php?page=panier/panier" method="post">   
-	           <table>  
-	              <thead>   
-	                  <tr>   
-	                      <td colspan="2">produit</td>   
-	                      <td>prix</td>   
-	                      <td>quantité</td>   
-	                      <td>Total</td>   
-	                  </tr>   
-	              </thead>   
-	              <tbody>   
-	                  <?php if (empty($produits)): ?>   
-	                  <tr>   
-	                      <td colspan="5" style="text-align:center;">Vous n'avez aucun produit ajouté dans votre panier</td>   
-	                  </tr>   
+<!-- BLOC BIENVENUE -->
+
+			<div class="panier">
+        	<h1 class="titre-panier">Votre panier d'achat</h1>
+    		<div>
+       		<img src="assets/img/Site/rapture.png" alt="" class="img__rapture">
+    		</div>
+			</div>  
+
+<div class="Bloc-Panier">   
+
+<!-- FORM PANIER -->
+
+	      <form action="index.php?page=panier/panier" method="post">   
+				 <img src="assets/img/Site/lighthouse-rapture.png" alt="lighthouse" class="imgs-description">
+	 					<!-- SI PANIER VIDE -->
+	                  <?php if (empty($produits)): ?>     
+	                      <p class="panier-vide">Vous n'avez aucun produit ajoute dans votre panier</p>   
+						<!-- SI PANIER PAS VIDE AFFICHE MOI LES PRODUITS -->
 	                  <?php else: ?>   
 	                  <?php foreach ($produits as $produit): ?>   
-	                  <tr>   
-	                      <td class="img">   
-	                          <a href="index.php?page=panier/produit&id=<?=$produit['id']?>">   
-	                              <img src="assets/upload/<?=$produit['img']?>" width="50" height="50" alt="<?=$produit['nom']?>">   
-	                          </a>
-	                      </td>   
-	       <td><a href="index.php?page=panier/produit&id=<?=$produit['id']?>"><?=$produit['nom']?></a>   
-	                          <br>   
-	                          <a href="index.php?page=panier/panier&remove=<?=$produit['id']?>" class="remove"><i class="fas fa-trash">&nbsp;</i>Supprimer </a></td>   
-	                      <td class="prix">&euro;<?=$produit['prix']?></td>   
-	                      <td class="quantite"><input type="number" name="quantite-<?=$produit['id']?>" value="<?=$produits_in_panier[$produit['id']]?>" min="1" max="<?=$produit['quantite']?>" placeholder="quantité" required></td>   
-	    <td class="prix">&euro;<?=$produit['prix']*$produits_in_panier[$produit['id']]?></td>   
-	                  </tr>   
+						<!-- IMAGE DU PRODUIT -->
+						<div class="product">
+	                  <div class="img-panier">
+	                      <a href="index.php?page=panier/produit&id=<?=$produit['id']?>">   
+	                          <img src="assets/upload/<?=$produit['img']?>" alt="<?=$produit['nom']?>" class="img">   
+	                      </a>  
+										</div> 
+						<!-- NOM DU PRODUIT -->
+	       						<div class="name">
+					 							<a href="index.php?page=panier/produit&id=<?=$produit['id']?>"><?=$produit['nom']?></a>
+										</div>
+						<!-- PRIX DU PRODUIT -->
+	                      <p class="prix-produit">&euro;<?=$produit['prix']?></p>  
+						<!-- BOUTON POUBELLE -->
+										<div class="poubelle">
+	                    	<a href="index.php?page=panier/panier&remove=<?=$produit['id']?>" class="remove"><i class="fas fa-trash">&nbsp;</i><img src="assets/img/Boutique/delete.png" alt="delete" class="delete"></a>
+										</div>
+										<div class="quantite-prix">
+											<div>
+							<!-- BOUTON QUANTITE  -->
+	                      <input type="number" name="quantite-<?=$produit['id']?>" value="<?=$produits_in_panier[$produit['id']]?>" min="1" max="<?=$produit['quantite']?>" placeholder="quantité" class="quantite" required>												
+											</div>
+											<div>
+						<!-- PRIX   -->
+	    									<p class="prix-produit-total">&euro;<?=$produit['prix']*$produits_in_panier[$produit['id']]?></p>												
+											</div>
+						</div> 
+						</div>
 	                  <?php endforeach; ?>   
-	                  <?php endif; ?>   
-	              </tbody>   
-	          </table>  
-	          <div class="subtotal">   
-	              <span class="text">Subtotal</span>   
-	              <span class="prix">&euro;<?=$subtotal?></span>   
-	          </div>  
-	            <div class="buttons">   
-	              <input type="submit" value="Mettre à jour" name="update">   
-	              <input type="submit" value="Passer la commande" name="placercommande">
-				</div>  
+	                  <?php endif; ?>
+
+<!-- SUBTOTAL -->
+
+										<div class="subtotal">
+											<div>
+												<span class="text">Subtotal</span>   												
+											</div>   
+											<div class="div-prix-sub">
+												<span class="prix-sub">&euro;<?=$subtotal?></span> 												
+											</div>
+  
+										</div>  
+
+
+<!-- BOUTONS SUBMIT -->
+										<div class="buttons">   
+											<input type="submit" value="Mettre à jour" name="update" class='btn-submit' >   
+											<input type="submit" value="Passer la commande" name="placercommande" class='btn-submit'>
+										</div>  
+
 	      </form> 
+
 
 <!-- BOUTON RETURN -->
 
@@ -151,5 +186,29 @@ require('assets/bdd/bddconfig.php');
             <a href="index.php?page=panier/produits">
                 <img src="assets/img/Site/return.png" alt="return" class="return">            
             </a>
-      </div>
-	  </div>
+      	</div>
+
+</div>
+
+<!-- BLOC TOP BUTTON  -->
+
+<div class="btn-top">
+    <img src="assets/img/Site/submarine.png" alt="sub" id="submarine-btn">
+</div>
+
+		</main>
+
+</body>
+
+<script src="assets/js/btn-top.js"></script>
+
+<!-- AOS JS ANIMATION  -->
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+
+
+
