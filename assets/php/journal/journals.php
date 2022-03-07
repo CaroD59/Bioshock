@@ -20,7 +20,7 @@
 	/* récupérer les produits de la base de données et retourner le résultat sous la forme d'un tableau.*/
 	$journals = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    // Obtenir le nombre total de produits
+    // Obtenir le nombre total de journaux
 	$total_journals = $objBdd->query('SELECT * FROM journal')->rowCount();
 	?>
 

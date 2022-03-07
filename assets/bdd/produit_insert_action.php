@@ -1,6 +1,6 @@
 <?php
 
-
+//on recup les variables et on les convertit en chaine
 $nom = htmlspecialchars($_POST["nom"]);
 $description = htmlspecialchars($_POST["description"]);
 $prix = htmlspecialchars($_POST["prix"]);
@@ -31,7 +31,7 @@ echo $size;
 echo "<br>";
 echo $error;
 
-
+// try va essayer le code avant de l'executer si erreur va dans le catch
 try{
 
     if(isset($_FILES['file'])){
@@ -63,7 +63,7 @@ try{
             $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             // ici on prepare notre requête SQL
             $PDOInsertFile = $objBdd->prepare("INSERT INTO `produits` ( `nom`, `description`, `prix`, `img`, `prix_Reel`, `quantite`  ) VALUES ( :nom , :description , :prix , :img , :prixReel , :quantite )");
-            // on initialise notre :email avec la variable qui recup le email
+            // on initialise notre :img avec la variable qui recup l'image
             $PDOInsertFile->bindParam(':img', $file, PDO::PARAM_STR);
             $PDOInsertFile->bindParam(':description', $description, PDO::PARAM_STR);
             $PDOInsertFile->bindParam(':nom', $nom, PDO::PARAM_STR);

@@ -1,5 +1,5 @@
 <?php
-
+// On récupère le pseudo du titre et va le convertir en chaine avec htmlspecialchars
 $titre = htmlspecialchars($_POST["titre"]);
 
 

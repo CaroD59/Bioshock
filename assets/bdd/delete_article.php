@@ -1,12 +1,12 @@
 <?php
-
+// on active les variables de session
 session_start();
 //si different de admin alors on renvoie vers la page connexion
 if($_SESSION['logged_in']['type'] != "admin"){
 
     header("Location: ../../index.php?page=connexion");
 }else{
-  
+  // On récupère l'idarticle et on va le convertir en chaine
 $idarticle = htmlspecialchars($_GET["id"]);
 
 require("bddconfig.php");

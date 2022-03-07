@@ -1,7 +1,11 @@
 <?php
+// recup des saisies POST de l'article
 
+// On récupère le pseudo du titre et va le convertir en chaine
 $titre = htmlspecialchars($_POST["titre"]);
+// On récupère le pseudo du resume et va le convertir en chaine
 $resume = htmlspecialchars($_POST["resume"]);
+// On récupère le pseudo de l'idjournal et va le convertir en chaine
 $idjournal = htmlspecialchars($_GET["idjournal"]);
 
 
@@ -23,9 +27,10 @@ echo $size;
 echo "<br>";
 echo $error;
 
-
+// try va essayer le code avant de l'executer si erreur va dans le catch
 try{
 
+    // isset — Détermine si une variable est déclarée et est différente de null
     if(isset($_FILES['file'])){
 
         // explode separe la chaine => ( image.jpg -> ["image", "jpg"] ) Agis comme un split(".") en js 
@@ -55,10 +60,13 @@ try{
             $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             // ici on prepare notre requête SQL
             $PDOInsertFile = $objBdd->prepare("INSERT INTO `article` ( `titre`, `img`, `resume`, `idjournal` ) VALUES ( :titre , :img , :resume , :idjournal )");
-            // on initialise notre :email avec la variable qui recup le email
+            // on initialise notre :img avec la variable qui recup l'image
             $PDOInsertFile->bindParam(':img', $file, PDO::PARAM_STR);
+             // on initialise notre :titre avec la variable qui recup le titre
             $PDOInsertFile->bindParam(':titre', $titre, PDO::PARAM_STR);
+             // on initialise notre :resume avec la variable qui recup le resumé
             $PDOInsertFile->bindParam(':resume', $resume, PDO::PARAM_STR);
+             // on initialise notre :idjournal avec la variable qui recup l'idjournal
             $PDOInsertFile->bindParam(':idjournal', $idjournal, PDO::PARAM_STR);
             
           

@@ -1,5 +1,5 @@
 <?php
-
+// on active les variables de session
 session_start();
 
 
