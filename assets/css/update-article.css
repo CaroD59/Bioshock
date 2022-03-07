@@ -225,6 +225,13 @@ form {
   }
 }
 
+@media screen and (max-width: 370px) {
+  #resume {
+    width: 250px;
+    height: 700px;
+  }
+}
+
 @media screen and (max-width: 300px) {
   #titre {
     font-size: 0.5em;
@@ -235,7 +242,7 @@ form {
   }
 
   #resume {
-    width: 150px;
-    height: 800px;
+    width: 170px;
+    height: 600px;
   }
 }
