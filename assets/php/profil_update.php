@@ -8,6 +8,7 @@
     
 <main>
 <?php
+
            if( $verif_co == 0 ){
 
             header("Location: index.php?page=connexion");

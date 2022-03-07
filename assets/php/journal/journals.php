@@ -20,7 +20,7 @@
 	/* récupérer les produits de la base de données et retourner le résultat sous la forme d'un tableau.*/
 	$journals = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    // Obtenir le nombre total de produits
+    // Obtenir le nombre total de journaux
 	$total_journals = $objBdd->query('SELECT * FROM journal')->rowCount();
 	?>
 
@@ -37,6 +37,7 @@
         
 	    <p><?=$total_journals?> journal</p>
 	    <div class="journals-wrapper"><table><tr>
+		<!-- foreach méthode est utilisée pour parcourir les éléments d'un tableau indexé ou associatif. -->
 	        <?php foreach ($journals as $journal): ?>
 	        <td><a href="index.php?page=journal/journals&idjournal=<?=$journal['idjournal']?>" class="journal"> <a href="index.php?page=article/articles&idjournal=<?= $journal['idjournal'] ?>"><img src="assets/upload/<?=$journal['img']?>" width="200" height="200" alt="<?=$journal['titre']?>"></a><br>
           

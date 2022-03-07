@@ -38,6 +38,7 @@
 		
 	    <p><?=$total_produits?> produits</p>
 	    <div class="produits-wrapper"><table><tr>
+			<!-- foreach  est utilisée pour parcourir les éléments d'un tableau indexé ou associatif. -->
 	        <?php foreach ($produits as $produit): ?>
 	        <td><a href="index.php?page=panier/produit&id=<?=$produit['id']?>" class="produit"> <img src="assets/upload/<?=$produit['img']?>" width="200" height="200" alt="<?=$produit['nom']?>"><br>
 	            <span class="nom"><?=$produit['nom']?></span><br>

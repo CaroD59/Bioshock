@@ -1,6 +1,6 @@
 <?php
 
-//  si 0 !=  l'utilisateur est connecter
+//  si different de 0 !=  l'utilisateur est connecter
 if( $verif_co != 0){
     
     header("Location: index.php");
