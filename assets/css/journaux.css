@@ -1,0 +1,289 @@
+@font-face {
+  font-family: 'Andes';
+  src: url('../fonts/Andes.ttf');
+}
+
+body {
+  height: auto;
+  background-color: black;
+  color: #a3a3a3;
+  font-family: 'California FB';
+  font-size: 1em;
+}
+
+main {
+  padding-bottom: 150px;
+}
+
+/* Bienvenue  */
+
+.journaux {
+  background-image: url('/Bioshock/assets/img/Journal/journaux.jpg');
+  background-color: black;
+  height: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: 3px solid #8c783e;
+  margin-bottom: 100px;
+}
+
+.titre-journaux {
+  padding-top: 50px;
+  font-family: 'Andes';
+  font-size: 3em;
+  letter-spacing: 0.3em;
+  text-align: center;
+  color: #8c783e;
+  font-weight: normal;
+}
+
+.img__rapture {
+  padding-top: 20px;
+  width: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 50px;
+}
+
+/* Créer journal */
+
+.create-for-ryan {
+  text-align: center;
+  font-family: 'Andes';
+  font-size: 2em;
+  letter-spacing: 0.3em;
+  padding: 50px;
+}
+
+.plus {
+  width: 2em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+
+.post:hover {
+  color: white;
+  transition: 0.5s;
+  text-shadow: 0px 0px 5px #fff, 0px 0px 10px #fff, 0px 0px 15px #fff,
+    0px 0px 20px #fff, 0px 0px 30px #fff, 0px 0px 40px #fff, 0px 0px 55px #fff,
+    0px 0px 75px #fff;
+}
+
+a {
+  color: #8c783e;
+  text-decoration: none;
+}
+
+.produits-dispos {
+  text-align: center;
+  font-style: italic;
+  padding-bottom: 100px;
+}
+
+.number-produits {
+  font-weight: bold;
+}
+
+.titre-journal {
+  text-align: center;
+  font-family: 'Andes';
+  font-size: 2em;
+  padding: 20px;
+  letter-spacing: 0.2em;
+}
+
+.bloc {
+  border: 2px solid #8c783e;
+  border-radius: 30px;
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 200px;
+}
+
+.img-journal {
+  border-radius: 30px;
+  width: 100%;
+}
+
+/* Gestion des boutons de l'admin */
+
+.btns-gestion {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 30px;
+  border-bottom: 1px solid #8c783e;
+  margin-bottom: 50px;
+}
+
+.btns {
+  width: 3em;
+}
+
+/* Presentation */
+
+.presentation {
+  width: 50%;
+  background-color: #132b30;
+  border: 3px solid #8c783e;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.titre-description,
+.text-description {
+  font-size: 1.5em;
+  text-align: justify;
+}
+
+.span-ryan {
+  font-weight: bold;
+  color: #8c783e;
+}
+
+.imgs-description {
+  width: 6em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+/* Audio */
+
+.audios {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+  width: 200px;
+  margin: 0 auto;
+  border: 2px solid #8c783e;
+  border-radius: 20px;
+}
+
+.play-audio {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30px;
+  cursor: pointer;
+}
+
+.radio {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10em;
+  padding-bottom: 20px;
+}
+
+/* Bouton top  */
+
+.btn-top {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 100px;
+}
+
+#submarine-btn {
+  animation: float 6s ease-in-out infinite;
+  padding: 20px;
+  width: 7em;
+  cursor: pointer;
+}
+
+/* Float Animation */
+
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-20px);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+}
+
+/* Flicker Animation  */
+
+@keyframes flicker {
+  0%,
+  19.999%,
+  22%,
+  62.999%,
+  64%,
+  64.999%,
+  70%,
+  100% {
+    opacity: 0.99;
+  }
+  20%,
+  21.999%,
+  63%,
+  63.999%,
+  65%,
+  69.999% {
+    opacity: 0.4;
+  }
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 955px) {
+  .presentation {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 855px) {
+  .bloc {
+    width: 100%;
+  }
+
+  .btn-top {
+    position: static;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .img__rapture {
+    width: 200px;
+  }
+
+  .titre-journaux {
+    font-size: 1em;
+  }
+
+  .titre-journal {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .img__rapture {
+    width: 200px;
+  }
+
+  .btns-gestion {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .btns {
+    padding-bottom: 20px;
+  }
+}

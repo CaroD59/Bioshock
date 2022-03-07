@@ -1,0 +1,223 @@
+@font-face {
+  font-family: 'Andes';
+  src: url('../fonts/Andes.ttf');
+}
+
+body {
+  height: auto;
+  background-color: black;
+  color: #a3a3a3;
+  font-family: 'California FB';
+  font-size: 1em;
+}
+
+main {
+  padding-bottom: 150px;
+  padding-top: 100px;
+}
+
+/* Créer article */
+
+.create-for-ryan {
+  text-align: center;
+  font-family: 'Andes';
+  font-size: 2em;
+  letter-spacing: 0.3em;
+  padding: 50px;
+}
+
+.plus {
+  width: 2em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+
+.post:hover {
+  color: white;
+  transition: 0.5s;
+  text-shadow: 0px 0px 5px #fff, 0px 0px 10px #fff, 0px 0px 15px #fff,
+    0px 0px 20px #fff, 0px 0px 30px #fff, 0px 0px 40px #fff, 0px 0px 55px #fff,
+    0px 0px 75px #fff;
+}
+
+a {
+  color: #8c783e;
+  text-decoration: none;
+}
+
+.produits-dispos {
+  text-align: center;
+  padding-bottom: 100px;
+  font-style: italic;
+}
+
+.number-produits {
+  font-weight: bold;
+}
+
+/* Bloc des articles  */
+
+.Bloc-Articles {
+  padding: 50px;
+  background-image: url('/Bioshock/assets/img/Journal/old-paper.png');
+  background-color: black;
+  height: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: 3px solid #8c783e;
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 20px;
+  border: 3px solid #8c783e;
+}
+
+.article-section {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+
+.descriptions {
+  padding: 10px;
+  width: 50%;
+}
+
+.imgs-articles {
+  width: 50%;
+}
+
+.image-article {
+  width: 100%;
+  border-radius: 20px;
+  border: 3px solid #132b30;
+}
+
+.titre {
+  text-align: center;
+  color: white;
+  text-shadow: 0px 0px 5px #132b30, 0px 0px 10px #132b30, 0px 0px 15px #132b30,
+    0px 0px 20px #132b30, 0px 0px 30px #132b30, 0px 0px 40px #132b30,
+    0px 0px 55px #132b30, 0px 0px 75px #132b30;
+  font-family: 'Andes';
+  font-size: 2em;
+  letter-spacing: 0.2em;
+}
+
+.titre-journal {
+  text-align: center;
+  color: #8c783e;
+  text-shadow: 0px 0px 5px #132b30, 0px 0px 10px #132b30, 0px 0px 15px #132b30,
+    0px 0px 20px #132b30, 0px 0px 30px #132b30, 0px 0px 40px #132b30,
+    0px 0px 55px #132b30, 0px 0px 75px #132b30;
+  font-family: 'Andes';
+  font-size: 3em;
+  letter-spacing: 0.2em;
+  padding-bottom: 50px;
+  border-bottom: 3px dotted #132b30;
+  margin-bottom: 50px;
+}
+
+.resume {
+  text-align: justify;
+  color: #132b30;
+  padding: 20px;
+  margin: 0 auto;
+  font-family: 'California FB';
+  font-size: 1.6em;
+}
+
+/* Gestion des boutons de l'admin */
+
+.btns-gestion {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 30px;
+  border-bottom: 1px solid #132b30;
+  margin-bottom: 50px;
+}
+
+.btns {
+  width: 3em;
+}
+
+/* Return Button */
+
+.return-div {
+  padding-top: 50px;
+}
+
+.return {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 2em;
+  padding-bottom: 50px;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 1200px) {
+  .article-section {
+    flex-direction: column;
+  }
+
+  .imgs-articles,
+  .descriptions {
+    margin: 0 auto;
+  }
+
+  .descriptions {
+    width: 100%;
+  }
+
+  .titre {
+    padding-top: 50px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .imgs-articles {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .Bloc-Articles {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .titre-journal {
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .titre-journal {
+    font-size: 2em;
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .Bloc-Articles {
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .btns-gestion {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .btns {
+    padding-bottom: 20px;
+  }
+}
