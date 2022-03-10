@@ -38,10 +38,10 @@ function smtpMailer( $from, $subject, $body) {
 	$mail->Password = GMailPWD;
 	$mail->SetFrom($from);
 	$mail->Subject = $subject;
-	$mail->Body = $body;
-	if($piece_jointe != ""){
+	if($piece_jointe != "") {
 		$mail->addAttachment('../upload/'.$piece_jointe);
 	}
+	$mail->Body = $body;
 	$mail->AddAddress('testfoadsofip@gmail.com');
 	
 	if(!$mail->Send()) {
