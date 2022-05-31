@@ -68,7 +68,7 @@ try{
             header("Location: ../index.php");
         }
 
-    }else{
+    } else{
         //Renvoie sur la page d'accueil
         header("Location: ../index.php");
     }

@@ -3,7 +3,7 @@
 session_start(); 
 
 // on initialise une variable secure_id
-$_SESSION["secure_id"] = md5(time());
+$_SESSION["secure_id"] = hash('sha256', time());
 
 // on initialise la variable de tentative max 
 
