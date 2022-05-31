@@ -29,6 +29,7 @@ if($type != "admin"){
 
             <input type="text" name="titre" id="titre" placeholder="Modifier votre titre ici" required />
             <input type="submit" value="Envoyer" class="envoyer" required>
+            <!-- hidden permet d'inclure des données qui ne peuvent pas être vues ou modifiées lorsque le formulaire est envoyé -->
             <input type="hidden" name="idjournal" value="<?php echo $_GET["id"]?>">
 
             </form>

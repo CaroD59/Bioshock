@@ -2,6 +2,7 @@
 // on active les variables de session
 session_start();
 
+// lance les classes de PHPMailer
 use PHPMailer\PHPMailer\PHPMailer;
 
 require_once('../../PHPMailer/src/Exception.php');
@@ -38,10 +39,10 @@ function smtpMailer( $from, $subject, $body) {
 	$mail->Password = GMailPWD;
 	$mail->SetFrom($from);
 	$mail->Subject = $subject;
-	$mail->Body = $body;
 	if($piece_jointe != ""){
 		$mail->addAttachment('../upload/'.$piece_jointe);
 	}
+	$mail->Body = $body;
 	$mail->AddAddress('testfoadsofip@gmail.com');
 	
 	if(!$mail->Send()) {
@@ -99,4 +100,4 @@ function uploadfichier(){
 
 }
 
-$result = smtpmailer($to, $from,$subject, $body);
+$result = smtpmailer($from,$subject, $body);

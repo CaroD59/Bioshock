@@ -53,7 +53,7 @@ try{
             $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             // ici on prepare notre requête SQL
             $PDOInsertFile = $objBdd->prepare("INSERT INTO `journal` ( `titre`, `img` ) VALUES ( :titre , :img )");
-            // on initialise notre :email avec la variable qui recup le email
+            // on initialise notre :img et :titre avec la variable qui recup l'image et le titre
             $PDOInsertFile->bindParam(':img', $file, PDO::PARAM_STR);
             $PDOInsertFile->bindParam(':titre', $titre, PDO::PARAM_STR);
             

@@ -31,7 +31,7 @@ if($type != "admin"){
         <span class="image-preview__default-text">Image Preview</span>
     </div>
        </div>
-
+       <!-- POST va transmettre des données d’une page PHP à l’autre plus securisé car non stocké dans historique de navigation -->
     <form method="POST" action="assets/bdd/journal_insert_action.php" enctype="multipart/form-data">
     
     <div class="form">

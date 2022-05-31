@@ -1,5 +1,5 @@
 <?php 
-	/* Determiner le nombre de produits à afficher sur chaque page*/
+	/* Determiner le nombre de journaux à afficher sur chaque page*/
 	$nbr_journals_sur_chaque_page = 100;
 	/* La page actuelle, apparaîtra dans l'URL  comme index.php?page=journal&p=1 ou p=2 ce signifié la page 1 l& page 2 etc...*/
 	$current_page = isset($_GET['p']) && is_numeric($_GET['p']) ? (int)$_GET['p'] : 1;
@@ -11,13 +11,13 @@
      // En cas de problème renvoie dans le catch avec l'erreur
      $objBdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-	/* Sélectionnez les produits commandés par la date ajoutée*/
+	/* Sélectionnez les journaux par  date ajoutée*/
 	$stmt = $objBdd->prepare('SELECT * FROM journal ORDER BY date DESC LIMIT ?,?');
 	/* bindValue nous permettra d'utiliser des entiers dans la déclaration SQL, que nous devons utiliser pour LIMIT.*/
 	$stmt->bindValue(1, ($current_page - 1) * $nbr_journals_sur_chaque_page, PDO::PARAM_INT);
 	$stmt->bindValue(2, $nbr_journals_sur_chaque_page, PDO::PARAM_INT);
 	$stmt->execute();
-	/* récupérer les produits de la base de données et retourner le résultat sous la forme d'un tableau.*/
+	/* récupérer les journaux de la base de données et retourner le résultat sous la forme d'un tableau.*/
 	$journals = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     // Obtenir le nombre total de journaux
